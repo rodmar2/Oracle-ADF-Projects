@@ -251,6 +251,10 @@
             <value n="id" v="JPS Designtime"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="Oracle JEWT"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <list n="libraryReferences">
          <hash>
@@ -323,6 +327,10 @@
          </hash>
          <hash>
             <value n="id" v="JPS Designtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle JEWT"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -432,6 +440,16 @@
             <value n="URI" v="http://xmlns.oracle.com/adf/faces/rich/component"/>
             <value n="version" v="11"/>
          </hash>
+         <hash>
+            <hash n="baseLibrary">
+               <value n="name" v="ADF Data Visualization"/>
+               <value n="version" v="11"/>
+            </hash>
+            <value n="name" v="ADF Data Visualization"/>
+            <value n="taglibURL" v="@oracle.home@../oracle_common/modules/oracle.adf.view_11.1.1/dvt-faces.jar!/META-INF/bi.taglib.xml"/>
+            <value n="URI" v="http://xmlns.oracle.com/dss/adf/faces"/>
+            <value n="version" v="11"/>
+         </hash>
       </list>
    </hash>
    <hash n="oracle.jdevimpl.webapp.jsp.libraries.model.ProjectTagLibraries">
@@ -468,6 +486,17 @@
             <value n="tldURL" v="@oracle.home@../oracle_common/modules/oracle.adf.view_11.1.1/adf-richclient-impl-11.jar!/META-INF/afu.tld"/>
             <value n="URI" v="http://xmlns.oracle.com/adf/faces/rich"/>
             <value n="version" v="11"/>
+         </hash>
+         <hash>
+            <hash n="baseLibrary">
+               <value n="name" v="ADF Data Visualization"/>
+               <value n="version" v="1.1"/>
+            </hash>
+            <value n="jspVersion" v="2.1"/>
+            <value n="name" v="ADF Data Visualization"/>
+            <value n="tldURL" v="@oracle.home@../oracle_common/modules/oracle.adf.view_11.1.1/dvt-faces.jar!/META-INF/bi.tld"/>
+            <value n="URI" v="http://xmlns.oracle.com/dss/adf/faces"/>
+            <value n="version" v="1.1"/>
          </hash>
       </list>
    </hash>

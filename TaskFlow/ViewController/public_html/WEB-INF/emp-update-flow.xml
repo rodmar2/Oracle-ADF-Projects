@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="emp-update-flow">
+    <default-activity>intro</default-activity>
+    <view id="intro">
+      <page>/intro.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="search">
+      <page>/search.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="update">
+      <page>/update.jsff</page>
+      <train-stop/>
+    </view>
+    <train/>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
