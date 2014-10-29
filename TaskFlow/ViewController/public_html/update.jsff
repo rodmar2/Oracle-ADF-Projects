@@ -56,8 +56,8 @@
     </af:inputText>
     <f:facet name="footer">
       <af:group id="g1">
-        <af:commandButton text="Submit" id="cb1"/>
-        <af:commandButton text="Cancel" id="cb2"/>
+        <af:commandButton text="Submit" id="cb1" action="commit"/>
+        <af:commandButton text="Cancel" id="cb2" action="rollback"/>
       </af:group>
     </f:facet>
   </af:panelFormLayout>

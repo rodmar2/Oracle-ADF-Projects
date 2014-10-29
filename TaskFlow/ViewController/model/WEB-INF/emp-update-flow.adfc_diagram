@@ -79,4 +79,54 @@
       <property
          name="sdm:polyPoints">R50,448.0,361.24707,529.0,363.24707,L50</property>
    </TrainFlow>
+   <TaskFlowReturn
+      id="TaskFlowReturn7">
+      <property
+         name="activityId">commit</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>commit&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  commit&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">595.59766</property>
+      <property
+         name="x">466.0</property>
+   </TaskFlowReturn>
+   <TaskFlowReturn
+      id="TaskFlowReturn8">
+      <property
+         name="activityId">rollback</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>rollback&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  rollback&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">592.8965</property>
+      <property
+         name="x">652.0</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase9"
+      from="View5"
+      to="TaskFlowReturn7">
+      <property
+         name="fromOutcome">commit</property>
+      <property
+         name="sdm:polyPoints">B50,570.0,417.24707,466.0,541.2471,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase10"
+      from="View5"
+      to="TaskFlowReturn8">
+      <property
+         name="fromOutcome">rollback</property>
+      <property
+         name="sdm:polyPoints">B56,573.5,417.24707,652.0,538.8965,T50</property>
+   </ControlFlowCase>
 </SDM>

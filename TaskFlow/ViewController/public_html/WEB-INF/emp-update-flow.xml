@@ -2,6 +2,9 @@
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="emp-update-flow">
     <default-activity>intro</default-activity>
+    <transaction>
+      <new-transaction/>
+    </transaction>
     <view id="intro">
       <page>/intro.jsff</page>
       <train-stop/>
@@ -14,7 +17,30 @@
       <page>/update.jsff</page>
       <train-stop/>
     </view>
+    <task-flow-return id="commit">
+      <outcome>
+        <name>commit</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="rollback">
+      <outcome>
+        <name>rollback</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
     <train/>
+    <control-flow-rule id="__1">
+      <from-activity-id>update</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>commit</from-outcome>
+        <to-activity-id>commit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>rollback</from-outcome>
+        <to-activity-id>rollback</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
     <use-page-fragments/>
   </task-flow-definition>
 </adfc-config>
