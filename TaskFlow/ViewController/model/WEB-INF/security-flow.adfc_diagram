@@ -7,6 +7,8 @@
       <property
          name="activityId">login</property>
       <property
+         name="page">/login.jsff</property>
+      <property
          name="start">true</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>login&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
@@ -54,6 +56,8 @@
       <property
          name="activityId">error</property>
       <property
+         name="page">/error.jsff</property>
+      <property
          name="description">&lt;html>&lt;p>&lt;b>error&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
@@ -82,7 +86,7 @@
       <property
          name="fromOutcome">bad</property>
       <property
-         name="sdm:polyPoints">B44,353.5,275.24707,272.0,365.59766,T50</property>
+         name="sdm:polyPoints">B44,353.5,275.24707,275.5,365.24707,T56</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -92,6 +96,16 @@
       <property
          name="fromOutcome">good</property>
       <property
-         name="sdm:polyPoints">B56,360.5,275.24707,443.68945,366.79883,T50</property>
+         name="sdm:polyPoints">B56,360.5,275.24707,443.68945,366.09766,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase9"
+      from="View5"
+      to="View2">
+      <property
+         name="fromOutcome">login</property>
+      <property
+         name="sdm:polyPoints">T44,268.5,365.24707,104.0,277.24707,B50</property>
    </ControlFlowCase>
 </SDM>

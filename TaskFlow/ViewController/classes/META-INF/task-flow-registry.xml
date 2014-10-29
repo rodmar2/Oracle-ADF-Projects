@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
+   <task-flow-descriptor path="WEB-INF/security-flow.xml" id="security-flow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="facelets">
+      <input-parameter name="username"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/emp-update-flow.xml" id="emp-update-flow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="true" page-type="facelets"/>
+</task-flow-registry>

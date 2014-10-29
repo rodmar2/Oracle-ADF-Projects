@@ -2,15 +2,36 @@
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="security-flow">
     <default-activity>login</default-activity>
-    <view id="login"></view>
-    <router id="router1"></router>
+    <input-parameter-definition id="__10">
+      <name>username</name>
+      <value>#{pageFlowScope.username}</value>
+      <class>java.lang.String</class>
+      <required/>
+    </input-parameter-definition>
+    <managed-bean id="__6">
+      <managed-bean-name>backing_login</managed-bean-name>
+      <managed-bean-class>com.globant.hr.view.backing.backing_login</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <view id="login">
+      <page>/login.jsff</page>
+    </view>
+    <router id="router1">
+      <case id="__9">
+        <expression>#{backing_login.password == 'oracle'}</expression>
+        <outcome>good</outcome>
+      </case>
+      <default-outcome>bad</default-outcome>
+    </router>
     <task-flow-call id="emp-update-flow">
       <task-flow-reference>
         <document>/WEB-INF/emp-update-flow.xml</document>
         <id>emp-update-flow</id>
       </task-flow-reference>
     </task-flow-call>
-    <view id="error"></view>
+    <view id="error">
+      <page>/error.jsff</page>
+    </view>
     <control-flow-rule id="__1">
       <from-activity-id>login</from-activity-id>
       <control-flow-case id="__2">
@@ -26,6 +47,13 @@
       <control-flow-case id="__5">
         <from-outcome>good</from-outcome>
         <to-activity-id>emp-update-flow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id>error</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome>login</from-outcome>
+        <to-activity-id>login</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>
