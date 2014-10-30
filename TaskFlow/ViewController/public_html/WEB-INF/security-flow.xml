@@ -18,7 +18,7 @@
     </view>
     <router id="router1">
       <case id="__9">
-        <expression>#{backing_login.password == 'oracle'}</expression>
+        <expression>#{backing_login.password.value== 'oracle'}</expression>
         <outcome>good</outcome>
       </case>
       <default-outcome>bad</default-outcome>

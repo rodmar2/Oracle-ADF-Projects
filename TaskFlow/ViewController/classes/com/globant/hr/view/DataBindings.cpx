@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
              SeparateXMLFiles="false" Package="com.globant.hr.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
   <pageMap>
     <page path="/search.jsff" usageId="com_globant_hr_view_searchPageDef"/>
     <page path="/update.jsff" usageId="com_globant_hr_view_updatePageDef"/>
+    <page path="/master.jsf" usageId="com_globant_hr_view_masterPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_globant_hr_view_searchPageDef" path="com.globant.hr.view.pageDefs.searchPageDef"/>
     <page id="com_globant_hr_view_updatePageDef" path="com.globant.hr.view.pageDefs.updatePageDef"/>
+    <page id="com_globant_hr_view_masterPageDef" path="com.globant.hr.view.pageDefs.masterPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="com.globant.hr.model"
