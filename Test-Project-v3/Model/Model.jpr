@@ -54,7 +54,7 @@
       <string v="oracle.adfdtinternal.model.ide.settings.ADFMSettings/adfmContentSet"/>
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
-   <value n="defaultPackage" v="com.globant.project2.model"/>
+   <value n="defaultPackage" v="com.globant.project3.model"/>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="Java"/>
@@ -77,7 +77,7 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="Application1_Model_adflib8081">
+         <hash n="Test-Project-v3_Model_adflibTest-Project-v31">
             <value n="adflib-connectionDetails" v="true"/>
             <value n="adflib-nonReusablesError" v="false"/>
             <hash n="archiveOptions">
@@ -103,22 +103,22 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/Application1_Model_adflib8081.jar"/>
+            <url n="jarURL" path="deploy/Test-Project-v3_Model_adflibTest-Project-v31.jar"/>
             <hash n="libraryDependencies">
                <value n="IncludeLibrariesFromOtherContainers" v="true"/>
             </hash>
             <hash n="LibraryDependencies"/>
             <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
-            <value n="profileName" v="Application1_Model_adflib8081"/>
+            <value n="profileName" v="Test-Project-v3_Model_adflibTest-Project-v31"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="Application1_Model_adflib8081"/>
+         <string v="Test-Project-v3_Model_adflibTest-Project-v31"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="Application1-Model-webapp"/>
-      <value n="j2eeWebContextRoot" v="Application1-Model-context-root"/>
+      <value n="j2eeWebAppName" v="Test-Project-v3-Model-webapp"/>
+      <value n="j2eeWebContextRoot" v="Test-Project-v3-Model-context-root"/>
    </hash>
    <hash n="oracle.jdeveloper.runner.RunConfigurations">
       <hash n="runConfigurationDefinitions">

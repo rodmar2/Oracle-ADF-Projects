@@ -9,7 +9,9 @@
     <af:form id="f1">
       <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx"
                        id="pt1">
-        <f:facet name="center"/>
+        <f:facet name="center">
+          <af:outputText value="Hello World !" id="ot1"/>
+        </f:facet>
         <f:facet name="header"/>
         <f:facet name="end"/>
         <f:facet name="start"/>

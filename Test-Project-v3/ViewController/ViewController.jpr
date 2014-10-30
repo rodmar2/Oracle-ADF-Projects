@@ -54,24 +54,24 @@
       <string v="oracle.adfdtinternal.model.ide.settings.ADFMSettings/adfmContentSet"/>
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
-   <value n="defaultPackage" v="com.globant.project2.view"/>
+   <value n="defaultPackage" v="com.globant.project3.view"/>
    <hash n="oracle.ide.model.DependencyConfiguration">
       <list n="dependencyList">
          <hash>
             <value n="class" v="oracle.jdeveloper.library.ProjectLibrary"/>
-            <url n="sourceOwnerURL" path="../Application1.jws"/>
+            <url n="sourceOwnerURL" path="../Test-Project-v3.jws"/>
             <url n="sourceURL" path="../Model/Model.jpr"/>
          </hash>
       </list>
    </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
-         <string v="Java"/>
-         <string v="ADF_FACES"/>
          <string v="HTML"/>
          <string v="JSF"/>
+         <string v="ADF_FACES"/>
          <string v="ADFc"/>
          <string v="XML"/>
+         <string v="Java"/>
          <string v="JSP"/>
       </list>
    </hash>
@@ -91,7 +91,7 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="Application1_ViewController_webapp1">
+         <hash n="Test-Project-v3_ViewController_webapp1">
             <hash n="appletArchives"/>
             <hash n="appletFiles">
                <value n="autoInclude" v="true"/>
@@ -102,8 +102,8 @@
             <hash n="archiveOptions">
                <value n="hasManifest" v="false"/>
             </hash>
-            <url n="earURL" path="deploy/Application1_ViewController_webapp1.ear"/>
-            <value n="enterpriseAppName" v="Application1_ViewController_webapp1"/>
+            <url n="earURL" path="deploy/Test-Project-v3_ViewController_webapp1.ear"/>
+            <value n="enterpriseAppName" v="Test-Project-v3_ViewController_webapp1"/>
             <hash n="fileGroups">
                <list n="groups">
                   <hash>
@@ -151,21 +151,21 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/Application1_ViewController_webapp1.war"/>
+            <url n="jarURL" path="deploy/Test-Project-v3_ViewController_webapp1.war"/>
             <hash n="libraryDependencies">
                <value n="IncludeLibrariesFromOtherContainers" v="true"/>
             </hash>
             <value n="profileClass" v="oracle.jdeveloper.deploy.war.WarProfile"/>
-            <value n="profileName" v="Application1_ViewController_webapp1"/>
+            <value n="profileName" v="Test-Project-v3_ViewController_webapp1"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="Application1_ViewController_webapp1"/>
+         <string v="Test-Project-v3_ViewController_webapp1"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="Application1-ViewController-webapp"/>
-      <value n="j2eeWebContextRoot" v="Application1-ViewController-context-root"/>
+      <value n="j2eeWebAppName" v="Test-Project-v3-ViewController-webapp"/>
+      <value n="j2eeWebContextRoot" v="Test-Project-v3-ViewController-context-root"/>
    </hash>
    <hash n="oracle.jdeveloper.runner.RunConfigurations">
       <hash n="runConfigurationDefinitions">
@@ -248,6 +248,18 @@
             <value n="id" v="JSP Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="Oracle JEWT"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Common Web Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle Page Templates"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <list n="libraryReferences">
          <hash>
@@ -318,6 +330,18 @@
             <value n="id" v="JSP Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="Oracle JEWT"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Common Web Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle Page Templates"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
@@ -357,6 +381,17 @@
             <value n="tldURL" v="@oracle.home@../oracle_common/modules/oracle.adf.view_11.1.1/adf-richclient-impl-11.jar!/META-INF/afu.tld"/>
             <value n="URI" v="http://xmlns.oracle.com/adf/faces/rich"/>
             <value n="version" v="11"/>
+         </hash>
+         <hash>
+            <hash n="baseLibrary">
+               <value n="name" v="ADF Data Visualization"/>
+               <value n="version" v="1.1"/>
+            </hash>
+            <value n="jspVersion" v="2.1"/>
+            <value n="name" v="ADF Data Visualization"/>
+            <value n="tldURL" v="@oracle.home@../oracle_common/modules/oracle.adf.view_11.1.1/dvt-faces.jar!/META-INF/bi.tld"/>
+            <value n="URI" v="http://xmlns.oracle.com/dss/adf/faces"/>
+            <value n="version" v="1.1"/>
          </hash>
       </list>
    </hash>

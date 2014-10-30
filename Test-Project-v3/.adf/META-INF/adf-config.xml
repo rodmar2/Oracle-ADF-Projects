@@ -12,6 +12,7 @@
     </startup>
   </adf-adfm-config>
   <adf:adf-properties-child xmlns="http://xmlns.oracle.com/adf/config/properties">
-    <adf-property name="adfAppUID" value="Application1.com.globant.project2"/>
+    <adf-property name="adfAppUID"
+                  value="Test-Project-v3.com.globant.project3"/>
   </adf:adf-properties-child>
 </adf-config>
