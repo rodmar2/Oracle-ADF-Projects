@@ -10,11 +10,15 @@
       <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx"
                        id="pt1">
         <f:facet name="center">
-          <af:outputText value="Hello World !" id="ot1"/>
+          <af:outputText value="Two" id="ot2"/>
         </f:facet>
         <f:facet name="header"/>
-        <f:facet name="end"/>
-        <f:facet name="start"/>
+        <f:facet name="end">
+          <af:outputText value="Three" id="ot3"/>
+        </f:facet>
+        <f:facet name="start">
+          <af:outputText value="Hello World !" id="ot1"/>
+        </f:facet>
         <f:facet name="branding"/>
         <f:facet name="copyright"/>
         <f:facet name="status"/>
