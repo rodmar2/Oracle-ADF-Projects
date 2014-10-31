@@ -16,6 +16,8 @@
       <property
          name="activityId">welcome</property>
       <property
+         name="page">/page/welcome.jspx</property>
+      <property
          name="description">&lt;html>&lt;p>&lt;b>welcome&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
@@ -29,18 +31,22 @@
       <property
          name="activityId">products</property>
       <property
+         name="page">/page/products.jspx</property>
+      <property
          name="description">&lt;html>&lt;p>&lt;b>products&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">270.59766</property>
+         name="y">324.84473</property>
       <property
-         name="x">377.0</property>
+         name="x">372.0</property>
    </View>
    <View
       id="View5">
       <property
          name="activityId">stock</property>
+      <property
+         name="page">/page/stock.jspx</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>stock&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
@@ -68,7 +74,7 @@
       <property
          name="fromOutcome">products</property>
       <property
-         name="sdm:polyPoints">B50,370.0,132.24707,377.0,216.24707,T50</property>
+         name="sdm:polyPoints">B50,370.0,132.24707,372.0,270.84473,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"

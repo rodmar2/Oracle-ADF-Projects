@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/template/productTemplate.jspx" id="pt1">
+          <f:facet name="main_content">
+            <af:panelGroupLayout id="pgl1">
+              <af:selectOneChoice id="nl1" autoSubmit="true"
+                                  value="#{bindings.ProductsBaseView1.inputValue}"
+                                  label="#{bindings.ProductsBaseView1.label}">
+                <f:selectItems value="#{bindings.ProductsBaseView1.items}"
+                               id="si1"/>
+              </af:selectOneChoice>
+              <af:panelHeader text="Details" partialTriggers="nl1" id="ph1">
+                <dvt:barGraph id="barGraph1"
+                              value="#{bindings.WarehouseStockLevelsView1.graphModel}"
+                              subType="BAR_VERT_CLUST" shortDesc="Bar graph">
+                  <dvt:background>
+                    <dvt:specialEffects/>
+                  </dvt:background>
+                  <dvt:graphPlotArea/>
+                  <dvt:seriesSet>
+                    <dvt:series/>
+                  </dvt:seriesSet>
+                  <dvt:o1Axis/>
+                  <dvt:y1Axis/>
+                  <dvt:legendArea automaticPlacement="AP_NEVER"/>
+                </dvt:barGraph>
+              </af:panelHeader>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

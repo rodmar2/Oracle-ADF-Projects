@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/template/productTemplate.jspx" id="pt1">
+          <f:facet name="main_content">
+            <af:outputFormatted value="&lt;p> Please log in to get started. Valid users are:&lt;/p>&lt;ul>&lt;li>&lt;b>dfaviet&lt;/b> (customer)&lt;/li>&lt;li>&lt;b>sking&lt;/b> (staff)&lt;/li>&lt;li>&lt;b>achen&lt;/b> (supplier)&lt;/li>&lt;/ul> &lt;p>The password for all users is welcome1.&lt;/p>" id="of1"/>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

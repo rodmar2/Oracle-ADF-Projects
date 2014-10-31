@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="stockPageDef" Package="page">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProductsBaseView1" RangeSize="25"
+              DataControl="ProductsModuleDataControl"
+              id="ProductsBaseView1Iterator"/>
+    <iterator Binds="WarehouseStockLevelsView1" RangeSize="-1"
+              DataControl="ProductsModuleDataControl"
+              id="WarehouseStockLevelsView1Iterator"/>
+  </executables>
+  <bindings>
+    <navigationlist IterBinding="ProductsBaseView1Iterator"
+                    ListOperMode="navigation"
+                    ListIter="ProductsBaseView1Iterator" id="ProductsBaseView1"
+                    DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="ProductName"/>
+      </AttrNames>
+    </navigationlist>
+    <graph IterBinding="WarehouseStockLevelsView1Iterator"
+           id="WarehouseStockLevelsView1"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_VERT_CLUST">
+      <graphDataMap leafOnly="true">
+        <series>
+          <data>
+            <item value="QuantityOnHand"/>
+          </data>
+        </series>
+        <groups>
+          <item value="WarehouseId"/>
+        </groups>
+      </graphDataMap>
+    </graph>
+  </bindings>
+</pageDefinition>

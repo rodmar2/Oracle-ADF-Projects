@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="productsPageDef" Package="page">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProductsBaseView1" RangeSize="25"
+              DataControl="ProductsModuleDataControl"
+              id="ProductsBaseView1Iterator" ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ProductsBaseView1Iterator" id="ProductName">
+      <AttrNames>
+        <Item Value="ProductName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductsBaseView1Iterator" id="ProductStatus">
+      <AttrNames>
+        <Item Value="ProductStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductsBaseView1Iterator" id="CostPrice">
+      <AttrNames>
+        <Item Value="CostPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductsBaseView1Iterator" id="ListPrice">
+      <AttrNames>
+        <Item Value="ListPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ProductsBaseView1Iterator" id="First"
+            RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ProductsBaseView1Iterator" id="Previous"
+            RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ProductsBaseView1Iterator" id="Next"
+            RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ProductsBaseView1Iterator" id="Last"
+            RequiresUpdateModel="true" Action="last"/>
+  </bindings>
+</pageDefinition>

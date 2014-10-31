@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
-  <view id="welcome"></view>
-  <view id="products"></view>
-  <view id="stock"></view>
+  <view id="welcome">
+    <page>/page/welcome.jspx</page>
+  </view>
+  <view id="products">
+    <page>/page/products.jspx</page>
+  </view>
+  <view id="stock">
+    <page>/page/stock.jspx</page>
+  </view>
   <control-flow-rule id="__1">
     <from-activity-id id="__2">*</from-activity-id>
     <control-flow-case id="__4">
