@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="windows-1252" ?>
-<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2"></adfc-config>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="welcome"></view>
+  <view id="products"></view>
+  <view id="stock"></view>
+  <control-flow-rule id="__1">
+    <from-activity-id id="__2">*</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome id="__5">welcome</from-outcome>
+      <to-activity-id id="__3">welcome</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__6">
+      <from-outcome id="__8">products</from-outcome>
+      <to-activity-id id="__7">products</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__10">
+      <from-outcome id="__11">stock</from-outcome>
+      <to-activity-id id="__9">stock</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

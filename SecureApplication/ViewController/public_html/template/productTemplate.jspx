@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>productTemplate</display-name>
+        <facet>
+          <facet-name>main_content</facet-name>
+        </facet>
+      </component>
+    </af:xmlContent>
+    <af:panelStretchLayout topHeight="50px" startWidth="100px" id="pt_psl1">
+      <f:facet name="top">
+        <af:panelGroupLayout id="pt_pgl2" layout="vertical"
+                             inlineStyle="background-color:Black;">
+          <af:outputText value="outputText1" id="pt_ot1"
+                         inlineStyle="color:White; font-size:medium; font-weight:bold;"/>
+        </af:panelGroupLayout>
+      </f:facet>
+      <f:facet name="center">
+        <!-- id="af_twocol_left_full_header_scrolled"   -->
+        <af:panelStretchLayout startWidth="100px" id="pt_psl2">
+          <f:facet name="center">
+            <af:panelGroupLayout layout="scroll" id="pt_pgl1">
+              <af:facetRef facetName="main_content"/>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="start">
+            <af:panelGroupLayout id="pt_pgl3"
+                                 inlineStyle="background-color:ActiveBorder;"
+                                 layout="vertical">
+              <af:commandLink text="welcome" id="pt_cl1" action="welcome"/>
+              <af:commandLink text="products" id="pt_cl2" action="products"/>
+              <af:commandLink text="stock" id="pt_cl3" action="stock"/>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelStretchLayout>
+      </f:facet>
+    </af:panelStretchLayout>
+  </af:pageTemplateDef>
+</jsp:root>
