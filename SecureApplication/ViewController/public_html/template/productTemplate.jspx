@@ -27,7 +27,7 @@
             <af:image id="pt_i1"
                       source='#{securityContext.authenticated ? "/image/listLockIcon.png" : "/image/key.png"}'/>
             <af:goLink text="#{securityContext.authenticated ? &quot;Logout&quot; : &quot;Login&quot;}" id="pt_gl1"
-                       destination='#{securityContext.authenticated ? "/adfAuthentication?logout=true&amp;end_url=/faces/welcome.jsf"  : "/adfAuthentication?success_url=/faces/products.jsf"}'
+                       destination='#{securityContext.authenticated ? "/adfAuthentication?logout=true&amp;end_url=/faces/welcome"  : "/adfAuthentication?success_url=/faces/products"}'
                        inlineStyle="color:White; font-size:small; font-weight:bold;"/>
           </af:panelGroupLayout>
         </af:panelGroupLayout>
@@ -36,8 +36,7 @@
         <!-- id="af_twocol_left_full_header_scrolled"   -->
         <af:panelStretchLayout startWidth="100px" id="pt_psl2">
           <f:facet name="center">
-            <af:panelGroupLayout layout="scroll" id="pt_pgl1"
-                                 inlineStyle="color:White; font-weight:bold; font-size:small;">
+            <af:panelGroupLayout layout="scroll" id="pt_pgl1">
               <af:facetRef facetName="main_content"/>
             </af:panelGroupLayout>
           </f:facet>
@@ -46,8 +45,10 @@
                                  inlineStyle="background-color:ActiveBorder;"
                                  layout="vertical">
               <af:commandLink text="welcome" id="pt_cl1" action="welcome"/>
-              <af:commandLink text="products" id="pt_cl2" action="products"/>
-              <af:commandLink text="stock" id="pt_cl3" action="stock"/>
+              <af:commandLink text="products" id="pt_cl2" action="products"
+                              rendered="#{securityContext.authenticated}"/>
+              <af:commandLink text="stock" id="pt_cl3" action="stock"
+                              rendered="#{securityContext.userInRole['supplier']}"/>
             </af:panelGroupLayout>
           </f:facet>
         </af:panelStretchLayout>

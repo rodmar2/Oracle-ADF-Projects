@@ -22,7 +22,8 @@
                                id="ot4"/>
               </af:panelLabelAndMessage>
               <af:panelLabelAndMessage label="#{bindings.CostPrice.hints.label}"
-                                       id="plam4">
+                                       id="plam4"
+                                       rendered="#{securityContext.userInRole['staff']}">
                 <af:outputText value="#{bindings.CostPrice.inputValue}"
                                id="ot1">
                   <af:convertNumber groupingUsed="false"

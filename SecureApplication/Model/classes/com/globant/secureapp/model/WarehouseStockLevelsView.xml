@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="WarehouseStockLevelsView"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  SelectList="WarehouseStockLevels.PRODUCT_ID, 
+       WarehouseStockLevels.WAREHOUSE_ID, 
+       WarehouseStockLevels.QUANTITY_ON_HAND, 
+       WarehouseStockLevels.CREATED_BY, 
+       WarehouseStockLevels.CREATION_DATE, 
+       WarehouseStockLevels.LAST_UPDATED_BY, 
+       WarehouseStockLevels.LAST_UPDATE_DATE, 
+       WarehouseStockLevels.OBJECT_VERSION_ID"
+  FromList="WAREHOUSE_STOCK_LEVELS WarehouseStockLevels"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="WarehouseStockLevels"
+    Entity="com.globant.secureapp.model.WarehouseStockLevels"/>
+  <ViewAttribute
+    Name="ProductId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProductId"
+    EntityUsage="WarehouseStockLevels"
+    AliasName="PRODUCT_ID"/>
+  <ViewAttribute
+    Name="WarehouseId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="WarehouseId"
+    EntityUsage="WarehouseStockLevels"
+    AliasName="WAREHOUSE_ID"/>
+  <ViewAttribute
+    Name="QuantityOnHand"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="QuantityOnHand"
+    EntityUsage="WarehouseStockLevels"
+    AliasName="QUANTITY_ON_HAND"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="WarehouseStockLevels"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreationDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CreationDate"
+    EntityUsage="WarehouseStockLevels"
+    AliasName="CREATION_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="WarehouseStockLevels"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewAttribute
+    Name="LastUpdateDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdateDate"
+    EntityUsage="WarehouseStockLevels"
+    AliasName="LAST_UPDATE_DATE"/>
+  <ViewAttribute
+    Name="ObjectVersionId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ObjectVersionId"
+    EntityUsage="WarehouseStockLevels"
+    AliasName="OBJECT_VERSION_ID"/>
+</ViewObject>

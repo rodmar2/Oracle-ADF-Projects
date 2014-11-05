@@ -56,6 +56,26 @@
             </members>
           </app-role>
         </app-roles>
+        <resource-types>
+          <resource-type>
+            <name>RegionResourceType</name>
+            <display-name>Web Page</display-name>
+            <description>Region resource type</description>
+            <matcher-class>oracle.adf.share.security.authorization.RegionPermission</matcher-class>
+            <actions-delimiter>,</actions-delimiter>
+            <actions>view,customize,grant,personalize</actions>
+          </resource-type>
+        </resource-types>
+        <resources>
+          <resource>
+            <name>/page/welcome.jspx</name>
+            <display-name>welcome (No Page Definition)</display-name>
+            <description>/page/welcome.jspx</description>
+            <type-name-ref>RegionResourceType</type-name-ref>
+          </resource>
+        </resources>
+        <permission-sets>
+        </permission-sets>
         <jazn-policy>
           <grant>
             <grantee>

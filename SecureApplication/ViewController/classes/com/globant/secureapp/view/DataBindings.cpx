@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.64.93" id="DataBindings" SeparateXMLFiles="false"
+             Package="com.globant.secureapp.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/page/products.jspx"
+          usageId="com_globant_secureapp_view_productsPageDef"/>
+    <page path="/page/stock.jspx"
+          usageId="com_globant_secureapp_view_stockPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_globant_secureapp_view_productsPageDef"
+          path="page.productsPageDef"/>
+    <page id="com_globant_secureapp_view_stockPageDef"
+          path="page.stockPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="ProductsModuleDataControl"
+                     Package="com.globant.secureapp.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="ProductsModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

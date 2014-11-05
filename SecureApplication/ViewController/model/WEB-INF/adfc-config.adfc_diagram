@@ -74,7 +74,7 @@
       <property
          name="fromOutcome">products</property>
       <property
-         name="sdm:polyPoints">B50,370.0,132.24707,372.0,270.84473,T50</property>
+         name="sdm:polyPoints">B50,370.0,132.24707,372.0,270.49414,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
