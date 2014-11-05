@@ -17,15 +17,27 @@
       <f:facet name="top">
         <af:panelGroupLayout id="pt_pgl2" layout="vertical"
                              inlineStyle="background-color:Black;">
-          <af:outputText value="outputText1" id="pt_ot1"
+          <af:outputText value="Product Information" id="pt_ot1"
                          inlineStyle="color:White; font-size:medium; font-weight:bold;"/>
+          <af:panelGroupLayout id="pt_pgl4" layout="horizontal">
+            <af:outputFormatted value="Welcome #{securityContext.userName}"
+                                id="pt_of1"
+                                rendered="#{securityContext.authenticated}"
+                                inlineStyle="color:White; font-size:small; font-weight:bold;"/>
+            <af:image id="pt_i1"
+                      source='#{securityContext.authenticated ? "/image/listLockIcon.png" : "/image/key.png"}'/>
+            <af:goLink text="#{securityContext.authenticated ? &quot;Logout&quot; : &quot;Login&quot;}" id="pt_gl1"
+                       destination='#{securityContext.authenticated ? "/adfAuthentication?logout=true&amp;end_url=/faces/welcome.jsf"  : "/adfAuthentication?success_url=/faces/products.jsf"}'
+                       inlineStyle="color:White; font-size:small; font-weight:bold;"/>
+          </af:panelGroupLayout>
         </af:panelGroupLayout>
       </f:facet>
       <f:facet name="center">
         <!-- id="af_twocol_left_full_header_scrolled"   -->
         <af:panelStretchLayout startWidth="100px" id="pt_psl2">
           <f:facet name="center">
-            <af:panelGroupLayout layout="scroll" id="pt_pgl1">
+            <af:panelGroupLayout layout="scroll" id="pt_pgl1"
+                                 inlineStyle="color:White; font-weight:bold; font-size:small;">
               <af:facetRef facetName="main_content"/>
             </af:panelGroupLayout>
           </f:facet>
