@@ -15,10 +15,5 @@
     <adf-property name="adfAppUID"
                   value="Test-Project-v3.com.globant.project3"/>
   </adf:adf-properties-child>
-  <adf-security-child xmlns="http://xmlns.oracle.com/adf/security/config">
-    <JaasSecurityContext initialContextFactoryClass="oracle.adf.share.security.JAASInitialContextFactory"
-                         jaasProviderClass="oracle.adf.share.security.providers.jps.JpsSecurityContext"
-                         authorizationEnforce="true"
-                         authenticationRequire="true"/>
-  </adf-security-child>
+  <adf-security-child xmlns="http://xmlns.oracle.com/adf/security/config"/>
 </adf-config>
