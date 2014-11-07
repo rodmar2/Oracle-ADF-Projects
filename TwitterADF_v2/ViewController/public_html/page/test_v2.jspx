@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx"
+                         id="pt1">
+          <f:facet name="center">
+            <af:group id="g1">
+              <af:panelFormLayout id="pfl1">
+                <af:inputText value="#{bindings.Folloers.inputValue}"
+                              label="#{bindings.Folloers.hints.label}"
+                              required="#{bindings.Folloers.hints.mandatory}"
+                              columns="#{bindings.Folloers.hints.displayWidth}"
+                              maximumLength="#{bindings.Folloers.hints.precision}"
+                              shortDesc="#{bindings.Folloers.hints.tooltip}"
+                              id="it1">
+                  <f:validator binding="#{bindings.Folloers.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.Folloers.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.TwitterAccount.inputValue}"
+                              label="#{bindings.TwitterAccount.hints.label}"
+                              required="#{bindings.TwitterAccount.hints.mandatory}"
+                              columns="#{bindings.TwitterAccount.hints.displayWidth}"
+                              maximumLength="#{bindings.TwitterAccount.hints.precision}"
+                              shortDesc="#{bindings.TwitterAccount.hints.tooltip}"
+                              id="it2">
+                  <f:validator binding="#{bindings.TwitterAccount.validator}"/>
+                </af:inputText>
+              </af:panelFormLayout>
+              <af:separator id="s1"/>
+              <dvt:barGraph id="barGraph1"
+                            value="#{bindings.FollowersView1.graphModel}"
+                            subType="BAR_VERT_PERCENT">
+                <dvt:background>
+                  <dvt:specialEffects/>
+                </dvt:background>
+                <dvt:graphPlotArea/>
+                <dvt:seriesSet>
+                  <dvt:series/>
+                </dvt:seriesSet>
+                <dvt:o1Axis/>
+                <dvt:y1Axis/>
+                <dvt:legendArea automaticPlacement="AP_NEVER"/>
+              </dvt:barGraph>
+            </af:group>
+          </f:facet>
+          <f:facet name="header"/>
+          <f:facet name="end"/>
+          <f:facet name="start"/>
+          <f:facet name="branding"/>
+          <f:facet name="copyright"/>
+          <f:facet name="status"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
