@@ -19,7 +19,7 @@
       </AttrNames>
     </attributeValues>
     <graph IterBinding="FollowersView1Iterator" id="FollowersView1"
-           xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_VERT_PERCENT">
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_VERT_CLUST">
       <graphDataMap leafOnly="true">
         <series>
           <data>

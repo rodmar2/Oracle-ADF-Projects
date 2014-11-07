@@ -38,7 +38,7 @@
               <af:separator id="s1"/>
               <dvt:barGraph id="barGraph1"
                             value="#{bindings.FollowersView1.graphModel}"
-                            subType="BAR_VERT_PERCENT">
+                            subType="BAR_VERT_CLUST">
                 <dvt:background>
                   <dvt:specialEffects/>
                 </dvt:background>

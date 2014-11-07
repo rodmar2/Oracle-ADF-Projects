@@ -3,13 +3,13 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FollowersView"
+  Name="MentionsView"
   Version="11.1.1.64.93"
   InheritPersonalization="true"
-  SelectList="Followers.ID, 
-       Followers.TWITTER_ACCOUNT, 
-       Followers.FOLLOERS AS FOLLOWERS"
-  FromList="FOLLOWERS Followers"
+  SelectList="Mentions.ID, 
+       Mentions.TWITTER_ACCOUNT, 
+       Mentions.DATE_OF_MENTION"
+  FromList="MENTIONS Mentions"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
@@ -18,25 +18,25 @@
     <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
   </DesignTime>
   <EntityUsage
-    Name="Followers"
-    Entity="com.globant.twitter.model.Followers"/>
+    Name="Mentions"
+    Entity="com.globant.twitter.model.Mentions"/>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="Followers"
+    EntityUsage="Mentions"
     AliasName="ID"/>
   <ViewAttribute
     Name="TwitterAccount"
     PrecisionRule="true"
     EntityAttrName="TwitterAccount"
-    EntityUsage="Followers"
+    EntityUsage="Mentions"
     AliasName="TWITTER_ACCOUNT"/>
   <ViewAttribute
-    Name="Folloers"
+    Name="DateOfMention"
     PrecisionRule="true"
-    EntityAttrName="Followers"
-    EntityUsage="Followers"
-    AliasName="FOLLOWERS"/>
+    EntityAttrName="DateOfMention"
+    EntityUsage="Mentions"
+    AliasName="DATE_OF_MENTION"/>
 </ViewObject>

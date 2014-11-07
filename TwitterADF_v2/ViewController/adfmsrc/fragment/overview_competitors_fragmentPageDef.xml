@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
-                version="11.1.1.64.93" id="test_v2PageDef" Package="page">
+                version="11.1.1.64.93"
+                id="overview_competitors_fragmentPageDef" Package="fragment">
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
@@ -8,16 +9,6 @@
               DataControl="AppModuleDataControl" id="FollowersView1Iterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="FollowersView1Iterator" id="TwitterAccount">
-      <AttrNames>
-        <Item Value="TwitterAccount"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="FollowersView1Iterator" id="Folloers">
-      <AttrNames>
-        <Item Value="Folloers"/>
-      </AttrNames>
-    </attributeValues>
     <graph IterBinding="FollowersView1Iterator" id="FollowersView1"
            xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_VERT_CLUST">
       <graphDataMap leafOnly="true">

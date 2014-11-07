@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="user-taskflow">
+    <default-activity id="__1">overview-competitors</default-activity>
+    <view id="overview-competitors">
+      <page>/page/test_v2.jspx</page>
+    </view>
+  </task-flow-definition>
+</adfc-config>

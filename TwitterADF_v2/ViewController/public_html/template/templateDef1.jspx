@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>templateDef1</display-name>
+        <facet>
+          <facet-name>content</facet-name>
+        </facet>
+      </component>
+    </af:xmlContent>
+    <af:panelSplitter orientation="vertical" splitterPosition="50" id="pt_ps2">
+      <f:facet name="first"/>
+      <f:facet name="second">
+        <af:decorativeBox theme="dark" id="pt_db2">
+          <f:facet name="center">
+            <af:decorativeBox theme="medium" id="pt_db1">
+              <f:facet name="center">
+                <af:panelSplitter orientation="horizontal"
+                                  splitterPosition="100" id="pt_ps1">
+                  <f:facet name="first"/>
+                  <f:facet name="second">
+                    <af:panelSplitter orientation="horizontal"
+                                      splitterPosition="100"
+                                      positionedFromEnd="true" id="pt_ps3">
+                      <f:facet name="first">
+                        <af:decorativeBox theme="default" id="pt_db3">
+                          <f:facet name="center">
+                            <af:facetRef facetName="content"/>
+                          </f:facet>
+                        </af:decorativeBox>
+                      </f:facet>
+                      <f:facet name="second"/>
+                    </af:panelSplitter>
+                  </f:facet>
+                </af:panelSplitter>
+              </f:facet>
+            </af:decorativeBox>
+          </f:facet>
+        </af:decorativeBox>
+      </f:facet>
+    </af:panelSplitter>
+  </af:pageTemplateDef>
+</jsp:root>

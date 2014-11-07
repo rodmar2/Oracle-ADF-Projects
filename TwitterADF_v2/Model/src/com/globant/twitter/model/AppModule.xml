@@ -13,4 +13,7 @@
   <ViewUsage
     Name="FollowersView1"
     ViewObjectName="com.globant.twitter.model.FollowersView"/>
+  <ViewUsage
+    Name="MentionsView1"
+    ViewObjectName="com.globant.twitter.model.MentionsView"/>
 </AppModule>
