@@ -13,31 +13,33 @@
                          id="pt1">
           <f:facet name="center">
             <af:group id="g1">
-              <af:panelFormLayout id="pfl1">
-                <af:inputText value="#{bindings.Folloers.inputValue}"
-                              label="#{bindings.Folloers.hints.label}"
-                              required="#{bindings.Folloers.hints.mandatory}"
-                              columns="#{bindings.Folloers.hints.displayWidth}"
-                              maximumLength="#{bindings.Folloers.hints.precision}"
-                              shortDesc="#{bindings.Folloers.hints.tooltip}"
-                              id="it1">
-                  <f:validator binding="#{bindings.Folloers.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.Folloers.format}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.TwitterAccount.inputValue}"
-                              label="#{bindings.TwitterAccount.hints.label}"
-                              required="#{bindings.TwitterAccount.hints.mandatory}"
-                              columns="#{bindings.TwitterAccount.hints.displayWidth}"
-                              maximumLength="#{bindings.TwitterAccount.hints.precision}"
-                              shortDesc="#{bindings.TwitterAccount.hints.tooltip}"
-                              id="it2">
-                  <f:validator binding="#{bindings.TwitterAccount.validator}"/>
-                </af:inputText>
-              </af:panelFormLayout>
+              <af:outputText value="Mentions" id="ot1"
+                             inlineStyle="font-size:medium; font-weight:bolder;"/>
+              <af:panelGroupLayout id="pgl1" layout="horizontal">
+                <af:inputDate value="#{bindings.StartDate.inputValue}"
+                              label="#{bindings.StartDate.hints.label}"
+                              required="#{bindings.StartDate.hints.mandatory}"
+                              shortDesc="#{bindings.StartDate.hints.tooltip}"
+                              id="id1">
+                  <f:validator binding="#{bindings.StartDate.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.StartDate.format}"/>
+                </af:inputDate>
+                <af:inputDate value="#{bindings.EndDate.inputValue}"
+                              label="#{bindings.EndDate.hints.label}"
+                              required="#{bindings.EndDate.hints.mandatory}"
+                              shortDesc="#{bindings.EndDate.hints.tooltip}"
+                              id="id2">
+                  <f:validator binding="#{bindings.EndDate.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
+                </af:inputDate>
+                <af:commandButton actionListener="#{bindings.ExecuteWithParams.execute}"
+                                  text="Show"
+                                  disabled="#{!bindings.ExecuteWithParams.enabled}"
+                                  id="cb1"/>
+              </af:panelGroupLayout>
               <af:separator id="s1"/>
               <dvt:barGraph id="barGraph1"
-                            value="#{bindings.FollowersView1.graphModel}"
+                            value="#{bindings.ViewObj_v4_1.graphModel}"
                             subType="BAR_VERT_CLUST">
                 <dvt:background>
                   <dvt:specialEffects/>
@@ -53,8 +55,16 @@
             </af:group>
           </f:facet>
           <f:facet name="header"/>
-          <f:facet name="end"/>
-          <f:facet name="start"/>
+          <f:facet name="end">
+            <f:verbatim>
+              :P
+            </f:verbatim>
+          </f:facet>
+          <f:facet name="start">
+            <f:verbatim>
+              Welcome
+            </f:verbatim>
+          </f:facet>
           <f:facet name="branding"/>
           <f:facet name="copyright"/>
           <f:facet name="status"/>

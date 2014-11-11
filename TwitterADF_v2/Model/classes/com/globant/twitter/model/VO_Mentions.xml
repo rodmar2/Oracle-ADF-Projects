@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VO_Mentions"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.globant.twitter.model.ViewObj_v4_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="StartDate"
+    Kind="where"
+    Type="oracle.jbo.domain.Date">
+    <TransientExpression><![CDATA[new Date()]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="com.globant.twitter.model.VO_Mentions.StartDate_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="com.globant.twitter.model.VO_Mentions.StartDate_FMT_FORMAT"/>
+        <LABEL
+          ResId="com.globant.twitter.model.VO_Mentions.StartDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="EndDate"
+    Kind="where"
+    Type="oracle.jbo.domain.Date">
+    <TransientExpression><![CDATA[new Date()]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="com.globant.twitter.model.VO_Mentions.EndDate_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="com.globant.twitter.model.VO_Mentions.EndDate_FMT_FORMAT"/>
+        <LABEL
+          ResId="com.globant.twitter.model.VO_Mentions.EndDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <SQLQuery>
+    <![CDATA[SELECT 
+    Mentions.TWITTER_ACCOUNT, 
+    Mentions.DATE_OF_MENTION, 
+    COUNT(Mentions.TWITTER_ACCOUNT) NO_MENTIONS 
+FROM 
+    MENTIONS Mentions 
+WHERE 
+    DATE_OF_MENTION BETWEEN :StartDate AND :EndDate 
+GROUP BY 
+    Mentions.DATE_OF_MENTION, 
+    Mentions.TWITTER_ACCOUNT]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="TwitterAccount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TWITTER_ACCOUNT"
+    Expression="TWITTER_ACCOUNT"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DateOfMention"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    AliasName="DATE_OF_MENTION"
+    Expression="DATE_OF_MENTION"
+    SQLType="TIMESTAMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NoMentions"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="NO_MENTIONS"
+    Expression="NO_MENTIONS"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.globant.twitter.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

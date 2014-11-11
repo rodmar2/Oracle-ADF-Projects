@@ -36,7 +36,7 @@
   <ViewAttribute
     Name="Folloers"
     PrecisionRule="true"
-    EntityAttrName="Folloers"
+    EntityAttrName="Followers"
     EntityUsage="Followers"
     AliasName="FOLLOWERS"/>
 </ViewObject>

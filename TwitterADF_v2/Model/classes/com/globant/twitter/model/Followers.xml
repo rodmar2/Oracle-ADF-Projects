@@ -43,7 +43,7 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="Folloers"
+    Name="Followers"
     Precision="10"
     Scale="0"
     ColumnName="FOLLOERS"

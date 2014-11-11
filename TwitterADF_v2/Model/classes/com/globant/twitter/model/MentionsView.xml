@@ -6,20 +6,28 @@
   Name="MentionsView"
   Version="11.1.1.64.93"
   InheritPersonalization="true"
-  SelectList="Mentions.ID, 
-       Mentions.TWITTER_ACCOUNT, 
-       Mentions.DATE_OF_MENTION"
-  FromList="MENTIONS Mentions"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  UseGlueCode="false">
+  UseGlueCode="false"
+  SelectList="Mentions.DATE_OF_MENTION, 
+       Mentions.ID, 
+       Mentions.MENTIONED_BY, 
+       Mentions.TWEET, 
+       Mentions.TWITTER_ACCOUNT"
+  FromList="MENTIONS Mentions">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
   </DesignTime>
   <EntityUsage
     Name="Mentions"
     Entity="com.globant.twitter.model.Mentions"/>
+  <ViewAttribute
+    Name="DateOfMention"
+    PrecisionRule="true"
+    EntityAttrName="DateOfMention"
+    EntityUsage="Mentions"
+    AliasName="DATE_OF_MENTION"/>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -28,15 +36,21 @@
     EntityUsage="Mentions"
     AliasName="ID"/>
   <ViewAttribute
+    Name="MentionedBy"
+    PrecisionRule="true"
+    EntityAttrName="MentionedBy"
+    EntityUsage="Mentions"
+    AliasName="MENTIONED_BY"/>
+  <ViewAttribute
+    Name="Tweet"
+    PrecisionRule="true"
+    EntityAttrName="Tweet"
+    EntityUsage="Mentions"
+    AliasName="TWEET"/>
+  <ViewAttribute
     Name="TwitterAccount"
     PrecisionRule="true"
     EntityAttrName="TwitterAccount"
     EntityUsage="Mentions"
     AliasName="TWITTER_ACCOUNT"/>
-  <ViewAttribute
-    Name="DateOfMention"
-    PrecisionRule="true"
-    EntityAttrName="DateOfMention"
-    EntityUsage="Mentions"
-    AliasName="DATE_OF_MENTION"/>
 </ViewObject>

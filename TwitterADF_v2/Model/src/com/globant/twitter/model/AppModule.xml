@@ -11,9 +11,9 @@
     <Attr Name="_deployType" Value="0"/>
   </DesignTime>
   <ViewUsage
-    Name="FollowersView1"
-    ViewObjectName="com.globant.twitter.model.FollowersView"/>
+    Name="VO_Mentions"
+    ViewObjectName="com.globant.twitter.model.VO_Mentions"/>
   <ViewUsage
-    Name="MentionsView1"
-    ViewObjectName="com.globant.twitter.model.MentionsView"/>
+    Name="VO_TwitterAccount"
+    ViewObjectName="com.globant.twitter.model.VO_TwitterAccount"/>
 </AppModule>

@@ -3,33 +3,48 @@
                 version="11.1.1.64.93" id="test_v2PageDef" Package="page">
   <parameters/>
   <executables>
-    <variableIterator id="variables"/>
-    <iterator Binds="FollowersView1" RangeSize="-1"
-              DataControl="AppModuleDataControl" id="FollowersView1Iterator"/>
+    <variableIterator id="variables">
+      <variableUsage DataControl="AppModuleDataControl"
+                     Binds="VO_Mentions.variablesMap.StartDate"
+                     Name="ExecuteWithParams_StartDate" IsQueriable="false"/>
+      <variableUsage DataControl="AppModuleDataControl"
+                     Binds="VO_Mentions.variablesMap.EndDate"
+                     Name="ExecuteWithParams_EndDate" IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="VO_Mentions" RangeSize="-1"
+              DataControl="AppModuleDataControl" id="ViewObj_v4_1Iterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="FollowersView1Iterator" id="TwitterAccount">
-      <AttrNames>
-        <Item Value="TwitterAccount"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="FollowersView1Iterator" id="Folloers">
-      <AttrNames>
-        <Item Value="Folloers"/>
-      </AttrNames>
-    </attributeValues>
-    <graph IterBinding="FollowersView1Iterator" id="FollowersView1"
+    <graph IterBinding="ViewObj_v4_1Iterator" id="ViewObj_v4_1"
            xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_VERT_CLUST">
       <graphDataMap leafOnly="true">
         <series>
           <data>
-            <item value="Folloers"/>
+            <item value="NoMentions"/>
           </data>
+          <item value="DateOfMention"/>
         </series>
         <groups>
           <item value="TwitterAccount"/>
         </groups>
       </graphDataMap>
     </graph>
+    <action IterBinding="ViewObj_v4_1Iterator" id="ExecuteWithParams"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="StartDate" NDType="oracle.jbo.domain.Date"
+                 NDValue="${bindings.ExecuteWithParams_StartDate}"/>
+      <NamedData NDName="EndDate" NDType="oracle.jbo.domain.Date"
+                 NDValue="${bindings.ExecuteWithParams_EndDate}"/>
+    </action>
+    <attributeValues IterBinding="variables" id="StartDate">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="EndDate">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_EndDate"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
