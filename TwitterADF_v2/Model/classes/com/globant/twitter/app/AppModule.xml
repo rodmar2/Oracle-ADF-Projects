@@ -6,9 +6,11 @@
   Name="AppModule"
   Version="11.1.1.64.93"
   InheritPersonalization="true"
+  ComponentClass="com.globant.twitter.app.AppModuleImpl"
   ClearCacheOnRollback="true">
   <DesignTime>
     <Attr Name="_deployType" Value="0"/>
+    <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <ViewUsage
     Name="VO_Mentions"
@@ -16,4 +18,8 @@
   <ViewUsage
     Name="VO_TwitterAccount"
     ViewObjectName="com.globant.twitter.model.VO_TwitterAccount"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.globant.twitter.model.ModelBundle"/>
+  </ResourceBundle>
 </AppModule>

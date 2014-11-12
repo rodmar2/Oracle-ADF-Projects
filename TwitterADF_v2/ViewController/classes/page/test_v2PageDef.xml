@@ -5,14 +5,17 @@
   <executables>
     <variableIterator id="variables">
       <variableUsage DataControl="AppModuleDataControl"
-                     Binds="ViewObj_v4_1.variablesMap.StartDate"
+                     Binds="VO_Mentions.variablesMap.StartDate"
                      Name="ExecuteWithParams_StartDate" IsQueriable="false"/>
       <variableUsage DataControl="AppModuleDataControl"
-                     Binds="ViewObj_v4_1.variablesMap.EndDate"
+                     Binds="VO_Mentions.variablesMap.EndDate"
                      Name="ExecuteWithParams_EndDate" IsQueriable="false"/>
     </variableIterator>
-    <iterator Binds="ViewObj_v4_1" RangeSize="-1"
+    <iterator Binds="VO_Mentions" RangeSize="-1"
               DataControl="AppModuleDataControl" id="ViewObj_v4_1Iterator"/>
+    <iterator Binds="VO_TwitterAccount" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="VO_TwitterAccountIterator"/>
   </executables>
   <bindings>
     <graph IterBinding="ViewObj_v4_1Iterator" id="ViewObj_v4_1"
@@ -46,5 +49,14 @@
         <Item Value="ExecuteWithParams_EndDate"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="VO_TwitterAccountIterator" ListOperMode="multiSelect"
+          ListIter="VO_TwitterAccountIterator" id="VO_TwitterAccount">
+      <AttrNames>
+        <Item Value="TwitterAccount1"/>
+      </AttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="TwitterAccount1"/>
+      </ListDisplayAttrNames>
+    </list>
   </bindings>
 </pageDefinition>

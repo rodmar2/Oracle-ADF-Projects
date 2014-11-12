@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx"
+                         id="pt1">
+         <f:facet name="center">
+            <af:group id="g1">
+              <af:outputText value="Mentions v3" id="ot1"
+                             inlineStyle="font-size:medium; font-weight:bolder;"/>
+              <af:panelGroupLayout id="pgl2" layout="horizontal">
+                <af:panelGroupLayout id="pgl1" layout="vertical" valign="top"
+                                     halign="left">
+                  <af:inputDate value="#{bindings.StartDate.inputValue}"
+                                label="#{bindings.StartDate.hints.label}"
+                                required="#{bindings.StartDate.hints.mandatory}"
+                                shortDesc="#{bindings.StartDate.hints.tooltip}"
+                                id="id1">
+                    <f:validator binding="#{bindings.StartDate.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.StartDate.format}"/>
+                  </af:inputDate>
+                  <af:inputDate value="#{bindings.EndDate.inputValue}"
+                                label="#{bindings.EndDate.hints.label}"
+                                required="#{bindings.EndDate.hints.mandatory}"
+                                shortDesc="#{bindings.EndDate.hints.tooltip}"
+                                id="id2">
+                    <f:validator binding="#{bindings.EndDate.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
+                  </af:inputDate>
+                  <af:selectManyCheckbox value="#{bindings.VO_TwitterAccount.inputValue}"
+                                         label="#{bindings.VO_TwitterAccount.label}"
+                                         id="TwitterAccountCheckBoxes">
+                    <f:selectItems value="#{bindings.VO_TwitterAccount.items}"
+                                   id="si1"/>
+                  </af:selectManyCheckbox>
+                  <af:commandButton actionListener="#{bindings.ExecuteWithParams.execute}"
+                                    text="Show"
+                                    disabled="#{!bindings.ExecuteWithParams.enabled}"
+                                    id="cb1"/>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout id="pgl3">
+                  <dvt:barGraph id="barGraph1"
+                                value="#{bindings.ViewObj_v4_1.graphModel}"
+                                subType="BAR_VERT_CLUST">
+                    <dvt:background>
+                      <dvt:specialEffects/>
+                    </dvt:background>
+                    <dvt:graphPlotArea/>
+                    <dvt:seriesSet>
+                      <dvt:series/>
+                    </dvt:seriesSet>
+                    <dvt:o1Axis/>
+                    <dvt:y1Axis/>
+                    <dvt:legendArea automaticPlacement="AP_NEVER"/>
+                  </dvt:barGraph>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+            </af:group>
+          </f:facet>
+          <f:facet name="header"/>
+         <f:facet name="end">
+            <f:verbatim>
+              :P
+            </f:verbatim>
+          </f:facet>
+          <f:facet name="start">
+            <af:group id="g2">
+              <af:panelGroupLayout id="pgl4" layout="vertical">
+                <f:verbatim>
+                  Welcome
+                </f:verbatim>
+                <af:separator id="s2"/>
+                <af:commandButton actionListener="#{bindings.testMethod_v1.execute}"
+                                  text="testMethod_v1"
+                                  disabled="#{!bindings.testMethod_v1.enabled}"
+                                  id="cb2"/>
+                <af:separator id="s1"/>
+                <af:panelFormLayout id="pfl1">
+                  <af:inputText value="#{bindings.values.inputValue}"
+                                label="Param : "
+                                required="#{bindings.values.hints.mandatory}"
+                                columns="#{bindings.values.hints.displayWidth}"
+                                maximumLength="#{bindings.values.hints.precision}"
+                                shortDesc="#{bindings.values.hints.tooltip}"
+                                id="it1">
+                    <f:validator binding="#{bindings.values.validator}"/>
+                  </af:inputText>
+                  <af:commandButton actionListener="#{bindings.testMethod_v2.execute}"
+                                    text="testMethod_v2"
+                                    disabled="#{!bindings.testMethod_v2.enabled}"
+                                    id="cb3"/>
+                  <af:inputText value="#{bindings.return.inputValue}"
+                                label="Result : "
+                                required="#{bindings.return.hints.mandatory}"
+                                columns="#{bindings.return.hints.displayWidth}"
+                                maximumLength="#{bindings.return.hints.precision}"
+                                shortDesc="#{bindings.return.hints.tooltip}"
+                                id="it2">
+                    <f:validator binding="#{bindings.return.validator}"/>
+                  </af:inputText>
+                </af:panelFormLayout>
+                <af:separator id="s3"/>
+                <af:panelFormLayout id="pfl2">
+                  <af:inputText
+                                label="Param : "
+                                required="#{bindings.values.hints.mandatory}"
+                                columns="#{bindings.values.hints.displayWidth}"
+                                maximumLength="#{bindings.values.hints.precision}"
+                                shortDesc="#{bindings.values.hints.tooltip}"
+                                id="it3">
+                    <f:validator binding="#{bindings.values.validator}"/>
+                  </af:inputText>
+                  <af:commandButton actionListener="#{bindings.testMethod_v2.execute}"
+                                    text="testMethod_v2"
+                                    disabled="#{!bindings.testMethod_v2.enabled}"
+                                    id="cb4"/>
+                  <af:inputText value="#{bindings.return.inputValue}"
+                                label="Result : "
+                                required="#{bindings.return.hints.mandatory}"
+                                columns="#{bindings.return.hints.displayWidth}"
+                                maximumLength="#{bindings.return.hints.precision}"
+                                shortDesc="#{bindings.return.hints.tooltip}"
+                                id="it4">
+                    <f:validator binding="#{bindings.return.validator}"/>
+                  </af:inputText>
+                </af:panelFormLayout>
+              </af:panelGroupLayout>
+            </af:group>
+          </f:facet>
+          <f:facet name="branding"/>
+          <f:facet name="copyright"/>
+          <f:facet name="status"/>
+          <f:attribute name="startColumnSize" value="300"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

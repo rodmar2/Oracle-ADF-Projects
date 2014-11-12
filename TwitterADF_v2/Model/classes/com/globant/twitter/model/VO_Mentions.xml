@@ -8,10 +8,14 @@
   InheritPersonalization="true"
   BindingStyle="OracleName"
   CustomQuery="true"
+  ComponentClass="com.globant.twitter.model.VO_MentionsImpl"
+  ComponentInterface="com.globant.twitter.model.common.VO_Mentions"
+  ClientProxyName="com.globant.twitter.model.client.VO_MentionsClient"
   FetchMode="FETCH_AS_NEEDED"
   PageIterMode="Full"
   UseGlueCode="false">
   <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll|Prog|VarAccess"/>
     <Attr Name="_isExpertMode" Value="true"/>
   </DesignTime>
   <Properties>
@@ -24,7 +28,6 @@
     Name="StartDate"
     Kind="where"
     Type="oracle.jbo.domain.Date">
-    <TransientExpression><![CDATA[new Date()]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <FMT_FORMATTER
@@ -35,12 +38,12 @@
           ResId="com.globant.twitter.model.VO_Mentions.StartDate_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <TransientExpression><![CDATA[new Date()]]></TransientExpression>
   </Variable>
   <Variable
     Name="EndDate"
     Kind="where"
     Type="oracle.jbo.domain.Date">
-    <TransientExpression><![CDATA[new Date()]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <FMT_FORMATTER
@@ -51,6 +54,7 @@
           ResId="com.globant.twitter.model.VO_Mentions.EndDate_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <TransientExpression><![CDATA[new Date()]]></TransientExpression>
   </Variable>
   <SQLQuery>
     <![CDATA[SELECT 
@@ -89,7 +93,7 @@ GROUP BY
     ColumnType="DATE"
     AliasName="DATE_OF_MENTION"
     Expression="DATE_OF_MENTION"
-    SQLType="TIMESTAMP">
+    SQLType="DATE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
     </DesignTime>
@@ -108,6 +112,21 @@ GROUP BY
       <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
   </ViewAttribute>
+  <ClientInterface>
+    <Method
+      Name="testMethod_v1">
+      <Return
+        Type="void"/>
+    </Method>
+    <Method
+      Name="testMethod_v2">
+      <Return
+        Type="java.lang.String"/>
+      <Parameter
+        Name="values"
+        Type="java.lang.String"/>
+    </Method>
+  </ClientInterface>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.globant.twitter.model.ModelBundle"/>

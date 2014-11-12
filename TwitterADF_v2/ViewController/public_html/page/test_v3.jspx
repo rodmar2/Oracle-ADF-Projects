@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1"
+                 binding="#{backingBeanScope.backing_jsfpage_test_v3.d1}">
+      <af:messages binding="#{backingBeanScope.backing_jsfpage_test_v3.m1}"
+                   id="m1"/>
+      <af:form id="f1" binding="#{backingBeanScope.backing_jsfpage_test_v3.f1}">
+        <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx"
+                         id="pt1">
+          <f:facet name="center">
+            <af:group id="g1"/>
+          </f:facet>
+          <f:facet name="header"/>
+          <f:facet name="end"/>
+          <f:facet name="start">
+            <af:panelGroupLayout binding="#{backingBeanScope.backing_jsfpage_test_v3.pgl4}"
+                                 id="pgl4" layout="vertical"/>
+          </f:facet>
+          <f:facet name="branding"/>
+          <f:facet name="copyright"/>
+          <f:facet name="status"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>  
+</jsp:root>

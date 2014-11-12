@@ -11,16 +11,24 @@
           usageId="com_globant_twitter_view_test_v2PageDef"/>
     <page path="/fragment/overview-competitors-fragment.jsff"
           usageId="com_globant_twitter_view_overview_competitors_fragmentPageDef"/>
+    <page path="/page/test_v3.jspx"
+          usageId="com_globant_twitter_view_test_v3PageDef"/>
+    <page path="/page/test_v4.jspx"
+          usageId="com_globant_twitter_view_test_v4PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_globant_twitter_view_test_v2PageDef"
           path="page.test_v2PageDef"/>
     <page id="com_globant_twitter_view_overview_competitors_fragmentPageDef"
           path="fragment.overview_competitors_fragmentPageDef"/>
+    <page id="com_globant_twitter_view_test_v3PageDef"
+          path="page.test_v3PageDef"/>
+    <page id="com_globant_twitter_view_test_v4PageDef"
+          path="page.test_v4PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl"
-                     Package="com.globant.twitter.model"
+                     Package="com.globant.twitter.app"
                      FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
                      SupportsTransactions="true" SupportsFindMode="true"
                      SupportsRangesize="true" SupportsResetState="true"

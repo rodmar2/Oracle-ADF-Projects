@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
-                version="11.1.1.64.93" id="test_v2PageDef" Package="page">
+                version="11.1.1.64.93" id="test_v4PageDef" Package="page">
   <parameters/>
   <executables>
     <variableIterator id="variables">
@@ -10,6 +10,11 @@
       <variableUsage DataControl="AppModuleDataControl"
                      Binds="VO_Mentions.variablesMap.EndDate"
                      Name="ExecuteWithParams_EndDate" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="testMethod_v2_return"
+                IsQueriable="false" IsUpdateable="0"
+                DefaultValue="${bindings.testMethod_v2.result}"/>
+      <variableUsage DataControl="AppModuleDataControl" Binds="values"
+                     Name="testMethod_v2_values" IsQueriable="false"/>
     </variableIterator>
     <iterator Binds="VO_Mentions" RangeSize="-1"
               DataControl="AppModuleDataControl" id="ViewObj_v4_1Iterator"/>
@@ -58,5 +63,27 @@
         <Item Value="TwitterAccount1"/>
       </ListDisplayAttrNames>
     </list>
+    <methodAction id="testMethod_v1" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="testMethod_v1"
+                  IsViewObjectMethod="true" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.VO_Mentions"/>
+    <methodAction id="testMethod_v2" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="testMethod_v2"
+                  IsViewObjectMethod="true" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.VO_Mentions"
+                  ReturnName="data.AppModuleDataControl.methodResults.testMethod_v2_AppModuleDataControl_VO_Mentions_testMethod_v2_result">
+      <NamedData NDName="values" NDType="java.lang.String"
+                 NDValue="${bindings.testMethod_v2_values}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="values">
+      <AttrNames>
+        <Item Value="testMethod_v2_values"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="return">
+      <AttrNames>
+        <Item Value="testMethod_v2_return"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
