@@ -4,6 +4,8 @@ import com.globant.twitter.model.common.VO_Mentions;
 
 import java.sql.ResultSet;
 
+import java.util.List;
+
 import oracle.jbo.domain.Date;
 import oracle.jbo.server.ViewObjectImpl;
 import oracle.jbo.server.ViewRowImpl;
@@ -100,4 +102,16 @@ public class VO_MentionsImpl extends ViewObjectImpl implements VO_Mentions {
         
         return result;
     }
+    
+    public String testMethod_v3(List<String> valuesList) { 
+        String result;
+        
+        System.out.println(String.format("testMethod_v3 !!!"));
+        result = "Hello " + valuesList.toString();
+        System.out.println(String.format("testMethod_v3 end: %s", result));
+        
+        return result;
+    }
+
+
 }

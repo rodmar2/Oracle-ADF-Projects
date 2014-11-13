@@ -6,5 +6,9 @@
       <id>user-taskflow</id>
     </task-flow-reference>
   </task-flow-call>
-
+  <managed-bean id="__4">
+    <managed-bean-name id="__3">Test_v4</managed-bean-name>
+    <managed-bean-class id="__1">com.globant.twitter.view.backing.page.Test_v4</managed-bean-class>
+    <managed-bean-scope id="__2">session</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

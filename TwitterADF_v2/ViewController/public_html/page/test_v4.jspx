@@ -36,7 +36,9 @@
                   </af:inputDate>
                   <af:selectManyCheckbox value="#{bindings.VO_TwitterAccount.inputValue}"
                                          label="#{bindings.VO_TwitterAccount.label}"
-                                         id="TwitterAccountCheckBoxes">
+                                         id="TwitterAccountCheckBoxes"
+                                         binding="#{Test_v4.values}"
+                                         attributeChangeListener="#{Test_v4.method_call}">
                     <f:selectItems value="#{bindings.VO_TwitterAccount.items}"
                                    id="si1"/>
                   </af:selectManyCheckbox>
@@ -44,6 +46,16 @@
                                     text="Show"
                                     disabled="#{!bindings.ExecuteWithParams.enabled}"
                                     id="cb1"/>
+                  <af:selectManyCheckbox label="Enterprises" id="smc1">
+                    <af:selectItem label="Globant" value="Globant" id="si6"/>
+                    <af:selectItem label="TataCompanies" value="TataCompanies"
+                                   id="si5"/>
+                    <af:selectItem label="Infosys" value="Infosys" id="si7"/>
+                    <af:selectItem label="nearsoft" value="nearsoft" id="si3"/>
+                    <af:selectItem label="Accenture" value="Accenture"
+                                   id="si2"/>
+                    <af:selectItem label="Deloitte" value="Deloitte" id="si4"/>
+                  </af:selectManyCheckbox>
                 </af:panelGroupLayout>
                 <af:panelGroupLayout id="pgl3">
                   <dvt:barGraph id="barGraph1"
@@ -108,28 +120,19 @@
                 </af:panelFormLayout>
                 <af:separator id="s3"/>
                 <af:panelFormLayout id="pfl2">
-                  <af:inputText
-                                label="Param : "
-                                required="#{bindings.values.hints.mandatory}"
-                                columns="#{bindings.values.hints.displayWidth}"
-                                maximumLength="#{bindings.values.hints.precision}"
-                                shortDesc="#{bindings.values.hints.tooltip}"
+                  <af:inputText value="#{bindings.values1.inputValue}"
+                                label="Params : "
+                                required="#{bindings.values1.hints.mandatory}"
+                                columns="#{bindings.values1.hints.displayWidth}"
+                                maximumLength="#{bindings.values1.hints.precision}"
+                                shortDesc="#{bindings.values1.hints.tooltip}"
                                 id="it3">
-                    <f:validator binding="#{bindings.values.validator}"/>
+                    <f:validator binding="#{bindings.values1.validator}"/>
                   </af:inputText>
-                  <af:commandButton actionListener="#{bindings.testMethod_v2.execute}"
-                                    text="testMethod_v2"
-                                    disabled="#{!bindings.testMethod_v2.enabled}"
+                  <af:commandButton actionListener="#{bindings.testMethod_v3.execute}"
+                                    text="testMethod_v3"
+                                    disabled="#{!bindings.testMethod_v3.enabled}"
                                     id="cb4"/>
-                  <af:inputText value="#{bindings.return.inputValue}"
-                                label="Result : "
-                                required="#{bindings.return.hints.mandatory}"
-                                columns="#{bindings.return.hints.displayWidth}"
-                                maximumLength="#{bindings.return.hints.precision}"
-                                shortDesc="#{bindings.return.hints.tooltip}"
-                                id="it4">
-                    <f:validator binding="#{bindings.return.validator}"/>
-                  </af:inputText>
                 </af:panelFormLayout>
               </af:panelGroupLayout>
             </af:group>
