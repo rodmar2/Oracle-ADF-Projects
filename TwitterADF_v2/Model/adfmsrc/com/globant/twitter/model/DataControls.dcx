@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration"
+                    version="11.1.1.64.93" id="DataControls"
+                    Package="com.globant.twitter.model">
+  <AdapterDataControl id="TwitterFacadeLocal"
+                      FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDefinition"
+                      SupportsTransactions="false" SupportsSortCollection="true"
+                      SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.globant.twitter.entity.TwitterFacadeLocal"
+                      BeanClass="com.globant.twitter.entity.TwitterFacadeLocal"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="com.globant.twitter.entity.MentionsBean"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="com.globant.twitter.entity.TwitterFacadeLocal"
+                       xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

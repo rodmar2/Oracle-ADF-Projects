@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="MentionsBean" Package="com.globant.twitter.entity"
+          BeanClass="com.globant.twitter.entity.MentionsBean"
+          isJavaBased="true">
+  <Attribute Name="dateOfMention" Type="java.sql.Timestamp"/>
+  <Attribute Name="id" PrimaryKey="true" Type="java.lang.Long"/>
+  <Attribute Name="mentionedBy" Type="java.lang.String"/>
+  <Attribute Name="tweet" Type="java.lang.String"/>
+  <Attribute Name="twitterAccount" Type="java.lang.String"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="com.globant.twitter.entity.MentionsBean"
+                     BeanClass="com.globant.twitter.entity.MentionsBean"
+                     id="MentionsBean">
+    <ParameterInfo id="dateOfMention" Type="java.sql.Timestamp"
+                   isStructured="false"/>
+    <ParameterInfo id="id" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="mentionedBy" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="tweet" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="twitterAccount" Type="java.lang.String"
+                   isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="com.globant.twitter.entity.MentionsBean"
+                     BeanClass="com.globant.twitter.entity.MentionsBean"
+                     id="MentionsBean"/>
+</JavaBean>

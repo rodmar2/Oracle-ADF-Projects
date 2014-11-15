@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="TwitterFacadeLocal" Package="com.globant.twitter.entity"
+          BeanClass="com.globant.twitter.entity.TwitterFacadeLocal"
+          isJavaBased="true">
+  <AccessorAttribute id="mentionsBeanFindAll" IsCollection="true"
+                     RemoveMethod="removeMentionsBean"
+                     BeanClass="com.globant.twitter.entity.MentionsBean"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeMentionsBean"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="mentionsBeanGroupBy" IsCollection="true"
+                     RemoveMethod="removeMentionsBean"
+                     BeanClass="com.globant.twitter.entity.MentionsBean"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeMentionsBean"/>
+    </Properties>
+  </AccessorAttribute>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object" id="queryByRange"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="jpqlStmt" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.globant.twitter.entity.MentionsBean"
+                  BeanClass="com.globant.twitter.entity.MentionsBean"
+                  id="persistMentionsBean" ReturnNodeName="MentionsBean">
+    <ParameterInfo id="mentionsBean"
+                   Type="com.globant.twitter.entity.MentionsBean"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.globant.twitter.entity.MentionsBean"
+                  BeanClass="com.globant.twitter.entity.MentionsBean"
+                  id="mergeMentionsBean" ReturnNodeName="MentionsBean">
+    <ParameterInfo id="mentionsBean"
+                   Type="com.globant.twitter.entity.MentionsBean"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeMentionsBean"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="mentionsBean"
+                   Type="com.globant.twitter.entity.MentionsBean"
+                   isStructured="true"/>
+  </MethodAccessor>
+</JavaBean>

@@ -1,0 +1,443 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">b8aa8833-b51d-4024-b936-8f040799b525</identifier>
+  </ID>
+  <name>MENTIONS</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">dc2a3917-9543-454c-bc15-da4b6da0d123</identifier>
+      </ID>
+      <name>ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c44d8e78-533f-4c65-aa4c-cbda1f59ddc0</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">20</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MENTIONS</name>
+                  <identifier class="java.math.BigDecimal">20767</identifier>
+                  <schemaName>APP</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MENTIONS</name>
+              <identifier class="java.math.BigDecimal">20767</identifier>
+              <schemaName>APP</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">e493a523-fc34-4b46-be84-23be17e542ca</identifier>
+      </ID>
+      <name>TWITTER_ACCOUNT</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d8159df1-ed40-4f5a-895b-2bca8d9bd6b7</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>TWITTER_ACCOUNT</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MENTIONS</name>
+                  <identifier class="java.math.BigDecimal">20767</identifier>
+                  <schemaName>APP</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TWITTER_ACCOUNT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MENTIONS</name>
+              <identifier class="java.math.BigDecimal">20767</identifier>
+              <schemaName>APP</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">4926125d-f38b-4aaf-b825-bc96c12d3a70</identifier>
+      </ID>
+      <name>MENTIONED_BY</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">3fd44ff7-d2ed-4d36-a9a4-9bdb38a79dac</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>MENTIONED_BY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MENTIONS</name>
+                  <identifier class="java.math.BigDecimal">20767</identifier>
+                  <schemaName>APP</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>MENTIONED_BY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MENTIONS</name>
+              <identifier class="java.math.BigDecimal">20767</identifier>
+              <schemaName>APP</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">0c082c35-cab2-456d-8517-b9d815b90ee6</identifier>
+      </ID>
+      <name>TWEET</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">fbd09bf7-da81-4f7a-b657-1cc190402bc3</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">300</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>TWEET</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MENTIONS</name>
+                  <identifier class="java.math.BigDecimal">20767</identifier>
+                  <schemaName>APP</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TWEET</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MENTIONS</name>
+              <identifier class="java.math.BigDecimal">20767</identifier>
+              <schemaName>APP</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">3d2ac6b1-353e-4a1a-bfac-c13274ee5784</identifier>
+      </ID>
+      <name>DATE_OF_MENTION</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">20770384-8677-4285-bd40-bbcc0902141e</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>DATE</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>DATE_OF_MENTION</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MENTIONS</name>
+                  <identifier class="java.math.BigDecimal">20767</identifier>
+                  <schemaName>APP</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>DATE_OF_MENTION</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MENTIONS</name>
+              <identifier class="java.math.BigDecimal">20767</identifier>
+              <schemaName>APP</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">c82c566f-9678-47c2-9495-fc44c16e3745</identifier>
+      </ID>
+      <name>MENTIONS_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>TWITTER_ACCOUNT</name>
+          <identifier class="java.lang.String">e493a523-fc34-4b46-be84-23be17e542ca</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>MENTIONS</name>
+            <identifier class="java.lang.String">b8aa8833-b51d-4024-b936-8f040799b525</identifier>
+            <schemaName>APP</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>APP</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>MENTIONS_FK1</name>
+            <childObjectNames>
+              <childObjectName>TWITTER_ACCOUNT</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MENTIONS</name>
+              <identifier class="java.math.BigDecimal">20767</identifier>
+              <schemaName>APP</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.ReferenceID">
+        <name>TWITTER_ACCOUNT_PK</name>
+        <childObjectNames>
+          <childObjectName>TWITTER_ACCOUNT</childObjectName>
+        </childObjectNames>
+        <parent class="oracle.javatools.db.ReferenceID">
+          <name>TWITTER_ACCOUNT</name>
+          <identifier class="java.math.BigDecimal">20762</identifier>
+          <schemaName>APP</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <subType>PKConstraint</subType>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b7cb96e2-8129-4864-8904-152a62b40508</identifier>
+      </ID>
+      <name>MENTIONS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ID</name>
+          <identifier class="java.lang.String">dc2a3917-9543-454c-bc15-da4b6da0d123</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>MENTIONS</name>
+            <identifier class="java.lang.String">b8aa8833-b51d-4024-b936-8f040799b525</identifier>
+            <schemaName>APP</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>APP</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>MENTIONS_PK</name>
+            <childObjectNames>
+              <childObjectName>ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MENTIONS</name>
+              <identifier class="java.math.BigDecimal">20767</identifier>
+              <schemaName>APP</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>MENTIONS</name>
+        <identifier class="java.math.BigDecimal">20767</identifier>
+        <schemaName>APP</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">12302c6c-9d5b-47b9-8242-4d70f5825d4c</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <minExtent>1</minExtent>
+        <nextExtent>1048576</nextExtent>
+        <percentFree>10</percentFree>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>MENTIONS</name>
+                <identifier class="java.math.BigDecimal">20767</identifier>
+                <schemaName>APP</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.ReferenceID">
+          <name>USERS</name>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>APP</name>
+  </schema>
+</table>

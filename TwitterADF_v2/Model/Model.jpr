@@ -55,12 +55,38 @@
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
    <value n="defaultPackage" v="com.globant.twitter.model"/>
+   <hash n="ejbModuleContainer">
+      <value n="cmpProvider" v="EJB 3.0"/>
+      <hash n="ejbDiagramToPuMap">
+         <hash n="model">
+            <hash n="com">
+               <hash n="globant">
+                  <hash n="twitter">
+                     <hash n="model">
+                        <value n="EJB Diagram1.ejb_diagram" v="Model"/>
+                     </hash>
+                  </hash>
+               </hash>
+            </hash>
+         </hash>
+      </hash>
+      <value n="ejbVersion" v="3.0"/>
+      <list n="toplinkJpaClientUrls">
+         <url path="src/com/globant/twitter/app/TwitterFacadeClient.java"/>
+         <url path="src/com/globant/twitter/app/TwitterFacadeClient.java"/>
+      </list>
+      <url n="weblogicEjbJarNodeURL" path="src/META-INF/weblogic-ejb-jar.xml"/>
+   </hash>
    <value n="jbo.JpxName" v="com.globant.twitter.model.Model"/>
    <value n="JboProject" v="true"/>
+   <hash n="oracle.adfdtinternal.model.ide.settings.ADFMSettings">
+      <value n="hasDataControls" v="true"/>
+   </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="Java"/>
          <string v="ADFbc"/>
+         <string v="EJB"/>
       </list>
    </hash>
    <value n="oracle.jbo.SavedPreferences" v="true"/>
@@ -144,15 +170,46 @@
       <value n="j2eeWebAppName" v="TwitterADF_v2-Model-webapp"/>
       <value n="j2eeWebContextRoot" v="TwitterADF_v2-Model-context-root"/>
    </hash>
+   <hash n="oracle.jdeveloper.model.PathsConfiguration">
+      <hash n="javaContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="src/"/>
+         </list>
+      </hash>
+   </hash>
    <hash n="oracle.jdeveloper.runner.RunConfigurations">
       <hash n="runConfigurationDefinitions">
          <hash n="Default">
             <value n="custom" v="false"/>
             <value n="name" v="Default"/>
          </hash>
+         <hash n="EclipseLink JPA Client">
+            <value n="allowInput" v="false"/>
+            <value n="clearLogBeforeRun" v="true"/>
+            <value n="compileBeforeRun" v="true"/>
+            <value n="custom" v="false"/>
+            <value n="javaOptions" v="-javaagent:../modules/org.eclipse.persistence_1.1.0.0_2-1.jar"/>
+            <value n="logCommand" v="true"/>
+            <value n="logError" v="true"/>
+            <value n="logExit" v="true"/>
+            <value n="logOutput" v="true"/>
+            <value n="name" v="EclipseLink JPA Client"/>
+            <value n="programArguments" v=""/>
+            <value n="remoteDebuggingProfiling" v="false"/>
+            <value n="runActiveFile" v="true"/>
+            <value n="runAntBeforeRun" v="false"/>
+            <url n="runDirectoryURL" path="../../../../../../Oracle/Middleware4/jdeveloper/"/>
+            <value n="targetURL"/>
+            <value n="useProxy" v="true"/>
+            <value n="VMName" v="client"/>
+         </hash>
       </hash>
       <list n="runConfigurationList">
          <string v="Default"/>
+         <string v="EclipseLink JPA Client"/>
       </list>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
@@ -197,6 +254,30 @@
             <value n="id" v="ADF Common Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="TopLink"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Java EE 1.5 API"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="EJB 3.0"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Model Generic Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle XML Parser v2"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="WebLogic 10.3 Remote-Client"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <list n="libraryReferences">
          <hash>
@@ -239,10 +320,41 @@
             <value n="id" v="ADF Common Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="TopLink"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Java EE 1.5 API"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="EJB 3.0"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Model Generic Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle XML Parser v2"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="WebLogic 10.3 Remote-Client"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
       <url n="outputDirectory" path="classes/"/>
+   </hash>
+   <hash n="oracle.toplink.workbench.addin">
+      <hash n="persistence-list">
+         <hash n="src$META-INF$persistence.xml">
+            <value n="development-database" v="Connection1"/>
+         </hash>
+      </hash>
    </hash>
    <hash n="ResourceBundleOptions">
       <value n="ADFRestricted" v="true"/>

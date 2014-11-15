@@ -1,6 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <MetadataDirectory xmlns="http://xmlns.oracle.com/adfm/metainf" version="11.1.1.0.0">
-   <BusinessComponentServiceRegistry path="com/globant/twitter/model/common/bc4j.xcfg"/>
-   <BusinessComponentProjectRegistry path="com/globant/twitter/model/Model.jpx"/>
+  <DataControlRegistry path="com/globant/twitter/model/DataControls.dcx"/>
 <BusinessComponentServiceRegistry path="com/globant/twitter/app/common/bc4j.xcfg"/>
+   <BusinessComponentProjectRegistry path="com/globant/twitter/model/Model.jpx"/>
 </MetadataDirectory>

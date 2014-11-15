@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
+  <persistence-unit name="Model">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>java:/app/jdbc/jdbc/Connection1DS</jta-data-source>
+    <class>com.globant.twitter.entity.MentionsBean</class>
+    <class>com.globant.twitter.entity.Graph_v1</class>
+    <class>com.globant.twitter.entity.UsersBean</class>
+    <properties>
+      <property name="eclipselink.target-server" value="WebLogic_10"/>
+      <property name="javax.persistence.jtaDataSource"
+                value="java:/app/jdbc/jdbc/Connection1DS"/>
+    </properties>
+  </persistence-unit>
+</persistence>

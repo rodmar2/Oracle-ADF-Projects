@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:DI='http://xmlns.omg.org/DI/2.0'>
+  <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.7.0'/>
+  <DI:Diagram xmi:id='id4ec97edd-ca56-4505-b810-cd040c215927' zoom='0.0'>
+    <contained xmi:type='DI:GraphNode' xmi:id='id3f23f3b2-af39-4438-a2bc-a6161c8412be'>
+      <position x='100.0' y='100.0'/>
+      <property key='text' value='This diagram is associated with Persistence Unit Model'/>
+      <property key='fontColor' value='#0'/>
+      <property key='lineColor' value='#a5a5a5'/>
+      <property key='font' value='SansSerif,plain,11'/>
+      <property key='lineWidth' value='1.0'/>
+      <property key='fillColor' value='#ffffcc'/>
+      <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='Note'/>
+      <size height='120.0' width='120.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphNode' xmi:id='ide67ab275-2f27-4c18-abc6-f5f1fdffca76'>
+      <anchorage xmi:id='idd9fe71be-e455-4fc1-b455-e53f9e59d3bf' graphEdge='ideb527a34-f04a-4ded-bfb7-21f9892d6989'/>
+      <contained xmi:type='DI:GraphNode' xmi:id='id76fa9c42-f609-42c1-a70d-1ab6be2bd0c1'>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='COMPACT'/>
+        <size height='100.0' width='100.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id460b050a-9f4e-4adb-be54-9989a8b3316c'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id521e8c0e-fec9-4593-af50-554d0d10d724'>
+          <property key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='FieldCompartment'/>
+          <size height='0.6726959943771362' width='0.0'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id5bbe84fd-a137-42a6-bfd7-d27b401bda30'>
+          <property key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='MethodCompartment'/>
+          <size height='1.3273040056228638' width='0.0'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
+        <size height='270.5693359375' width='200.0'/>
+      </contained>
+      <position x='72.0' y='277.0'/>
+      <property key='sortAttributesAlpha' value='true'/>
+      <property key='fontColor' value='#0'/>
+      <property key='showStereotype' value='true'/>
+      <property key='showAttributeType' value='true'/>
+      <property key='showOperations' value='true'/>
+      <property key='lineColor' value='#a5a5a5'/>
+      <property key='showAttributes' value='true'/>
+      <property key='font' value='SansSerif,plain,11'/>
+      <property key='excludeAttrFilter' value=''/>
+      <property key='showPackage' value='true'/>
+      <property key='fillColor' value='#efd6ff'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='EJB:EntityEJB~src/com/globant/twitter/entity/MentionsBean.java' presentation='SYMBOLIC'/>
+      <size height='270.5693359375' width='200.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphNode' xmi:id='id72bf6197-5d56-4d1e-aeeb-a2fe0a3aa7eb'>
+      <anchorage xmi:id='id919bd216-185d-4866-841d-0047641c64f1' graphEdge='ideb527a34-f04a-4ded-bfb7-21f9892d6989'/>
+      <contained xmi:type='DI:GraphNode' xmi:id='idbfe4a4e3-e69d-4a4d-beb3-e3af91e5825c'>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='COMPACT'/>
+        <size height='100.0' width='100.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='ide7d121c5-0957-467e-9541-b10822f038aa'>
+        <contained xmi:type='DI:GraphNode' xmi:id='idf9d0670a-1c0a-4827-a625-ccb3f4e69b3b'>
+          <property key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='FieldCompartment'/>
+          <size height='0.6765958070755005' width='0.0'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id87fcea74-293d-4dee-8e24-959ad38c6a70'>
+          <property key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='MethodCompartment'/>
+          <size height='1.3234041929244995' width='0.0'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
+        <size height='120.0' width='120.0'/>
+      </contained>
+      <position x='390.0' y='285.0'/>
+      <property key='sortAttributesAlpha' value='true'/>
+      <property key='fontColor' value='#0'/>
+      <property key='showStereotype' value='true'/>
+      <property key='showAttributeType' value='true'/>
+      <property key='showOperations' value='true'/>
+      <property key='lineColor' value='#a5a5a5'/>
+      <property key='showAttributes' value='true'/>
+      <property key='font' value='SansSerif,plain,11'/>
+      <property key='excludeAttrFilter' value=''/>
+      <property key='showPackage' value='true'/>
+      <property key='fillColor' value='#efd6ff'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='EJB:SessionBeanEJB~src/com/globant/twitter/entity/TwitterFacadeBean.java' presentation='SYMBOLIC'/>
+      <size height='120.0' width='120.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphEdge' xmi:id='ideb527a34-f04a-4ded-bfb7-21f9892d6989' anchor='id919bd216-185d-4866-841d-0047641c64f1 idd9fe71be-e455-4fc1-b455-e53f9e59d3bf'>
+      <contained xmi:type='DI:GraphNode' xmi:id='idb3809e77-84b9-4216-812d-cb594fa40a43'>
+        <position x='4.0' y='-25.47607421875'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id8a224a97-aceb-4a34-aaa5-c9c2fcb118be'>
+        <position x='4.0' y='4.0'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
+      </contained>
+      <property key='fontColor' value='#0'/>
+      <property key='showStereotype' value='false'/>
+      <property key='showAssocName' value='false'/>
+      <property key='lineColor' value='#646464'/>
+      <property key='font' value='SansSerif,plain,11'/>
+      <property key='EdgeType' value='1'/>
+      <property key='lineWidth' value='1.0'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='EJB:SessionFacadeEdge~src/com/globant/twitter/entity/TwitterFacadeBean.java@src/com/globant/twitter/entity/MentionsBean.java'/>
+      <waypoint x='390.0' y='345.0'/>
+      <waypoint x='272.0' y='345.0'/>
+    </contained>
+    <property key='maxEntriesInShape' value='10'/>
+    <property key='PageOrientation' value='1'/>
+    <property key='showGrid' value='true'/>
+    <property key='antialiasText' value='true'/>
+    <property key='logicalModel' value='false'/>
+    <property key='ForeignKeyNotation' value='0'/>
+    <property key='EdgeCrossingType' value='0'/>
+    <property key='showNonNavigable' value='false'/>
+    <property key='DiagramLayoutStyle' value='1'/>
+    <property key='showNavIconWhenBothEnds' value='false'/>
+    <property key='minLayoutDistance' value='40'/>
+    <property key='maxShapeWidth' value='200'/>
+    <property key='snapToGrid' value='true'/>
+    <property key='gridSize' value='15'/>
+    <property key='showClassifierOwnedEnds' value='false'/>
+    <property key='ContainerLayoutStyle' value='1'/>
+    <property key='PaperOrientation' value='Portrait'/>
+    <property key='PaperWidth' value='612.0'/>
+    <property key='PaperHeight' value='792.0'/>
+    <property key='PaperLeftMargin' value='72.0'/>
+    <property key='PaperTopMargin' value='72.0'/>
+    <property key='PaperRightMargin' value='72.0'/>
+    <property key='PaperBottomMargin' value='72.0'/>
+    <property key='PrintAreaX' value='0'/>
+    <property key='PrintAreaY' value='0'/>
+    <property key='PrintAreaWidth' value='0'/>
+    <property key='PrintAreaHeight' value='0'/>
+    <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='ejb_diagram'/>
+  </DI:Diagram>
+</xmi:XMI>
