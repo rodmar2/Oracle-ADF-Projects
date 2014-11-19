@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration"
+                    version="11.1.1.64.93" id="DataControls"
+                    Package="com.globant.invoices.model">
+  <AdapterDataControl id="InvoicesID_v1"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition"
+                      SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false"
+                      SupportsRangesize="false" SupportsFindMode="false"
+                      SupportsUpdates="true"
+                      Definition="com.globant.invoices.model.InvoicesID_v1"
+                      BeanClass="com.globant.invoices.model.InvoicesID_v1"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice"
+                  name="InvoicesID_v1" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="http://localhost:7101/Invoices_v1-JDEdwards_v1-context-root/InvoicesServerSoap12HttpPort?wsdl">
+        <service name="InvoicesServerService"
+                 namespace="http://invoices.globant.com/"
+                 connection="InvoicesID_v1">
+          <port name="InvoicesServerSoap12HttpPort">
+            <operation name="getInvoiceServerID"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="InvoicesID_v2"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition"
+                      SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false"
+                      SupportsRangesize="false" SupportsFindMode="false"
+                      SupportsUpdates="true"
+                      Definition="com.globant.invoices.model.InvoicesID_v2"
+                      BeanClass="com.globant.invoices.model.InvoicesID_v2"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice"
+                  name="InvoicesID_v2" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="http://localhost:7101/Invoices_v1-JDEdwards_v1-context-root/InvoicesServerSoap12HttpPort?wsdl">
+        <service name="InvoicesServerService"
+                 namespace="http://invoices.globant.com/"
+                 connection="InvoicesID_v2">
+          <port name="InvoicesServerSoap12HttpPort">
+            <operation name="getInvoiceServerID_v2"/>
+            <operation name="getInvoiceServerID"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="InvoicesID_v3"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition"
+                      SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false"
+                      SupportsRangesize="false" SupportsFindMode="false"
+                      SupportsUpdates="true"
+                      Definition="com.globant.invoices.model.InvoicesID_v3"
+                      BeanClass="com.globant.invoices.model.InvoicesID_v3"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice"
+                  name="InvoicesID_v3" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="http://localhost:7101/Invoices_v1-JDEdwards_v1-context-root/InvoicesServerSoap12HttpPort?wsdl">
+        <service name="InvoicesServerService"
+                 namespace="http://invoices.globant.com/"
+                 connection="InvoicesID_v3">
+          <port name="InvoicesServerSoap12HttpPort">
+            <operation name="getInvoiceServerID_v2"/>
+            <operation name="getInvoiceServerID_v3"/>
+            <operation name="getInvoiceServerID"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

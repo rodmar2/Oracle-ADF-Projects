@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="Return"
+          Package="com.globant.invoices.model.InvoicesID_v3.getInvoiceServerID_v3"
+          BeanClass="com.globant.invoices.model.InvoicesID_v3.getInvoiceServerID_v3.Return"
+          isJavaBased="false">
+  <Attribute Name="date" IsUpdateable="0" IsNotNull="false"
+             Type="java.sql.Date"/>
+  <Attribute Name="id" IsUpdateable="0" IsNotNull="true"
+             Type="java.lang.Integer"/>
+  <Attribute Name="idEmployee" IsUpdateable="0" IsNotNull="true"
+             Type="java.lang.Integer"/>
+  <Attribute Name="idJdedwards" IsUpdateable="0" IsNotNull="true"
+             Type="java.lang.Integer"/>
+  <Attribute Name="status" IsUpdateable="0" IsNotNull="true"
+             Type="java.lang.Integer"/>
+</JavaBean>

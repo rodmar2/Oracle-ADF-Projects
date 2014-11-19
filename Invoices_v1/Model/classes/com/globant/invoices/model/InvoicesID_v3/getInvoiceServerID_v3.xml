@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="getInvoiceServerID_v3"
+          Package="com.globant.invoices.model.InvoicesID_v3"
+          BeanClass="com.globant.invoices.model.InvoicesID_v3.getInvoiceServerID_v3"
+          isJavaBased="false">
+  <AccessorAttribute id="Return" IsCollection="false"
+                     BeanClass="com.globant.invoices.model.InvoicesID_v3.getInvoiceServerID_v3.Return"/>
+</JavaBean>

@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.globant.invoices.app.AppModule">
+      <AppModuleConfig name="149C450DD5F" DeployPlatform="LOCAL" BC4JConfigName="AppModuleLocal" ApplicationName="com.globant.invoices.app.AppModule" JDBCName="Invoices2DB" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" jbo.project="com.globant.invoices.model.Model" DBconnection="java:comp/env/jdbc/Invoices2DBDS">
+         <Database jbo.SQLBuilder="Oracle" jbo.TypeMapEntries="Oracle"/>
+         <Security AppModuleJndiName="com.globant.invoices.app.AppModule"/>
+         <Tester FullProxyInterfaceName="com.globant.invoices.app.common.AppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/Invoices2DBDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  ClearCacheOnRollback="true">
+  <DesignTime>
+    <Attr Name="_deployType" Value="0"/>
+  </DesignTime>
+  <ViewUsage
+    Name="AInvoicesView1"
+    ViewObjectName="com.globant.invoices.model.AInvoicesView"/>
+  <ViewUsage
+    Name="EmployeesView1"
+    ViewObjectName="com.globant.invoices.model.EmployeesView"/>
+  <ViewUsage
+    Name="AInvoicesView2"
+    ViewObjectName="com.globant.invoices.model.AInvoicesView"/>
+  <ViewLinkUsage
+    Name="AInvoicesEmployeesFk1Link1"
+    ViewLinkObjectName="com.globant.invoices.model.AInvoicesEmployeesFk1Link"
+    SrcViewUsageName="com.globant.invoices.app.AppModule.EmployeesView1"
+    DstViewUsageName="com.globant.invoices.app.AppModule.AInvoicesView2"
+    Reversed="false"/>
+</AppModule>

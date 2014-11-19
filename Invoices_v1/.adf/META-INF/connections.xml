@@ -1,6 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <References xmlns="http://xmlns.oracle.com/adf/jndi">
-   <Reference name="InvoicesConnection" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="InvoicesConnection" xmlns="">
+   <Reference name="Invoices2DB" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="Invoices2DB" xmlns="">
       <Factory className="oracle.jdeveloper.db.adapter.DatabaseProviderFactory"/>
       <RefAddresses>
          <StringRefAddr addrType="sid">
@@ -16,7 +16,7 @@
             <Contents>localhost</Contents>
          </StringRefAddr>
          <StringRefAddr addrType="user">
-            <Contents>hr</Contents>
+            <Contents>HR</Contents>
          </StringRefAddr>
          <SecureRefAddr addrType="password"/>
          <StringRefAddr addrType="DeployPassword">
@@ -25,6 +25,280 @@
          <StringRefAddr addrType="oraDriverType">
             <Contents>thin</Contents>
          </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="InvoicesID_v1" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+      <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="WebServiceConnection">
+            <Contents>
+               <wsconnection description="http://localhost:7101/Invoices_v1-JDEdwards_v1-context-root/InvoicesServerSoap12HttpPort?wsdl" service="{http://invoices.globant.com/}InvoicesServerService">
+                  <model name="{http://invoices.globant.com/}InvoicesServerService" xmlns="http://oracle.com/ws/model">
+                     <types xmlns="http://oracle.com/oracle/webservices/mdds">
+                        <complexType elementQualified="false" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID" prefix="tns" xmlns="">
+                           <sequence minOccurs="1" maxOccurs="1">
+                              <part name="arg0" required="true" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="int"/>
+                              </part>
+                           </sequence>
+                        </complexType>
+                        <complexType elementQualified="false" namespace="http://invoices.globant.com/" localPart="getInvoiceServerIDResponse" prefix="tns" xmlns="">
+                           <sequence minOccurs="1" maxOccurs="1">
+                              <part name="return" required="true" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="int"/>
+                              </part>
+                           </sequence>
+                        </complexType>
+                        <types-in-elements/>
+                     </types>
+                     <service name="{http://invoices.globant.com/}InvoicesServerService">
+                        <port name="InvoicesServerSoap12HttpPort" binding="{http://invoices.globant.com/}InvoicesServerSoap12HttpPortBinding" portType="{http://invoices.globant.com/}InvoicesServer">
+                           <soap addressUrl="http://localhost:7101/Invoices_v1-JDEdwards_v1-context-root/InvoicesServerSoap12HttpPort" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                           <operation name="getInvoiceServerID">
+                              <soap soapAction="" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://invoices.globant.com/}getInvoiceServerID">
+                                 <message style="2" use="1" soapVersion="2" encodingStyle="" docLitWrapped="true" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type namespace="http://invoices.globant.com/" localPart="getInvoiceServerID" prefix="tns"/>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name="" message="{http://invoices.globant.com/}getInvoiceServerIDResponse">
+                                 <message style="2" use="1" soapVersion="2" encodingStyle="" docLitWrapped="true" namespace="http://invoices.globant.com/" localPart="getInvoiceServerIDResponse" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type namespace="http://invoices.globant.com/" localPart="getInvoiceServerIDResponse" prefix="tns"/>
+                                    </part>
+                                 </message>
+                              </output>
+                           </operation>
+                        </port>
+                     </service>
+                  </model>
+               </wsconnection>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="InvoicesID_v2" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+      <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="WebServiceConnection">
+            <Contents>
+               <wsconnection description="http://localhost:7101/Invoices_v1-JDEdwards_v1-context-root/InvoicesServerSoap12HttpPort?wsdl" service="{http://invoices.globant.com/}InvoicesServerService">
+                  <model name="{http://invoices.globant.com/}InvoicesServerService" xmlns="http://oracle.com/ws/model">
+                     <types xmlns="http://oracle.com/oracle/webservices/mdds">
+                        <complexType elementQualified="false" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v2Response" prefix="tns" xmlns="">
+                           <sequence minOccurs="1" maxOccurs="1">
+                              <part name="return" required="false" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                              </part>
+                           </sequence>
+                        </complexType>
+                        <complexType elementQualified="false" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID" prefix="tns" xmlns="">
+                           <sequence minOccurs="1" maxOccurs="1">
+                              <part name="arg0" required="true" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="int"/>
+                              </part>
+                           </sequence>
+                        </complexType>
+                        <complexType elementQualified="false" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v2" prefix="tns" xmlns="">
+                           <sequence minOccurs="1" maxOccurs="1">
+                              <part name="arg0" required="true" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="int"/>
+                              </part>
+                              <part name="arg1" required="false" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                              </part>
+                           </sequence>
+                        </complexType>
+                        <complexType elementQualified="false" namespace="http://invoices.globant.com/" localPart="getInvoiceServerIDResponse" prefix="tns" xmlns="">
+                           <sequence minOccurs="1" maxOccurs="1">
+                              <part name="return" required="true" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="int"/>
+                              </part>
+                           </sequence>
+                        </complexType>
+                        <types-in-elements/>
+                     </types>
+                     <service name="{http://invoices.globant.com/}InvoicesServerService">
+                        <port name="InvoicesServerSoap12HttpPort" binding="{http://invoices.globant.com/}InvoicesServerSoap12HttpPortBinding" portType="{http://invoices.globant.com/}InvoicesServer">
+                           <soap addressUrl="http://localhost:7101/Invoices_v1-JDEdwards_v1-context-root/InvoicesServerSoap12HttpPort" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                           <operation name="getInvoiceServerID">
+                              <soap soapAction="" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://invoices.globant.com/}getInvoiceServerID">
+                                 <message style="2" use="1" soapVersion="2" encodingStyle="" docLitWrapped="true" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type namespace="http://invoices.globant.com/" localPart="getInvoiceServerID" prefix="tns"/>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name="" message="{http://invoices.globant.com/}getInvoiceServerIDResponse">
+                                 <message style="2" use="1" soapVersion="2" encodingStyle="" docLitWrapped="true" namespace="http://invoices.globant.com/" localPart="getInvoiceServerIDResponse" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type namespace="http://invoices.globant.com/" localPart="getInvoiceServerIDResponse" prefix="tns"/>
+                                    </part>
+                                 </message>
+                              </output>
+                           </operation>
+                           <operation name="getInvoiceServerID_v2">
+                              <soap soapAction="" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://invoices.globant.com/}getInvoiceServerID_v2">
+                                 <message style="2" use="1" soapVersion="2" encodingStyle="" docLitWrapped="true" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v2" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v2" prefix="tns"/>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name="" message="{http://invoices.globant.com/}getInvoiceServerID_v2Response">
+                                 <message style="2" use="1" soapVersion="2" encodingStyle="" docLitWrapped="true" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v2Response" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v2Response" prefix="tns"/>
+                                    </part>
+                                 </message>
+                              </output>
+                           </operation>
+                        </port>
+                     </service>
+                  </model>
+               </wsconnection>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="InvoicesID_v3" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+      <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="WebServiceConnection">
+            <Contents>
+               <wsconnection description="http://localhost:7101/Invoices_v1-JDEdwards_v1-context-root/InvoicesServerSoap12HttpPort?wsdl" service="{http://invoices.globant.com/}InvoicesServerService">
+                  <model name="{http://invoices.globant.com/}InvoicesServerService" xmlns="http://oracle.com/ws/model">
+                     <types xmlns="http://oracle.com/oracle/webservices/mdds">
+                        <complexType elementQualified="false" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v3Response" prefix="tns" xmlns="">
+                           <sequence minOccurs="1" maxOccurs="1">
+                              <part name="return" required="false" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://invoices.globant.com/" localPart="invoice" prefix="tns"/>
+                              </part>
+                           </sequence>
+                        </complexType>
+                        <complexType elementQualified="false" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v2Response" prefix="tns" xmlns="">
+                           <sequence minOccurs="1" maxOccurs="1">
+                              <part name="return" required="false" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                              </part>
+                           </sequence>
+                        </complexType>
+                        <complexType elementQualified="false" namespace="http://invoices.globant.com/" localPart="invoice" prefix="tns" xmlns="">
+                           <sequence minOccurs="1" maxOccurs="1">
+                              <part name="date" required="false" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="dateTime"/>
+                              </part>
+                              <part name="id" required="true" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="int"/>
+                              </part>
+                              <part name="idEmployee" required="true" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="int"/>
+                              </part>
+                              <part name="idJdedwards" required="true" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="int"/>
+                              </part>
+                              <part name="status" required="true" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="int"/>
+                              </part>
+                           </sequence>
+                        </complexType>
+                        <complexType elementQualified="false" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID" prefix="tns" xmlns="">
+                           <sequence minOccurs="1" maxOccurs="1">
+                              <part name="arg0" required="true" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="int"/>
+                              </part>
+                           </sequence>
+                        </complexType>
+                        <complexType elementQualified="false" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v2" prefix="tns" xmlns="">
+                           <sequence minOccurs="1" maxOccurs="1">
+                              <part name="arg0" required="true" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="int"/>
+                              </part>
+                              <part name="arg1" required="false" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                              </part>
+                           </sequence>
+                        </complexType>
+                        <complexType elementQualified="false" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v3" prefix="tns" xmlns="">
+                           <sequence minOccurs="1" maxOccurs="1">
+                              <part name="arg0" required="false" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://invoices.globant.com/" localPart="invoice" prefix="tns"/>
+                              </part>
+                           </sequence>
+                        </complexType>
+                        <complexType elementQualified="false" namespace="http://invoices.globant.com/" localPart="getInvoiceServerIDResponse" prefix="tns" xmlns="">
+                           <sequence minOccurs="1" maxOccurs="1">
+                              <part name="return" required="true" namespace="http://invoices.globant.com/" elementQualified="false">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="int"/>
+                              </part>
+                           </sequence>
+                        </complexType>
+                        <types-in-elements/>
+                     </types>
+                     <service name="{http://invoices.globant.com/}InvoicesServerService">
+                        <port name="InvoicesServerSoap12HttpPort" binding="{http://invoices.globant.com/}InvoicesServerSoap12HttpPortBinding" portType="{http://invoices.globant.com/}InvoicesServer">
+                           <soap addressUrl="http://localhost:7101/Invoices_v1-JDEdwards_v1-context-root/InvoicesServerSoap12HttpPort" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                           <operation name="getInvoiceServerID">
+                              <soap soapAction="" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://invoices.globant.com/}getInvoiceServerID">
+                                 <message style="2" use="1" soapVersion="2" encodingStyle="" docLitWrapped="true" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type namespace="http://invoices.globant.com/" localPart="getInvoiceServerID" prefix="tns"/>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name="" message="{http://invoices.globant.com/}getInvoiceServerIDResponse">
+                                 <message style="2" use="1" soapVersion="2" encodingStyle="" docLitWrapped="true" namespace="http://invoices.globant.com/" localPart="getInvoiceServerIDResponse" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type namespace="http://invoices.globant.com/" localPart="getInvoiceServerIDResponse" prefix="tns"/>
+                                    </part>
+                                 </message>
+                              </output>
+                           </operation>
+                           <operation name="getInvoiceServerID_v2">
+                              <soap soapAction="" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://invoices.globant.com/}getInvoiceServerID_v2">
+                                 <message style="2" use="1" soapVersion="2" encodingStyle="" docLitWrapped="true" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v2" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v2" prefix="tns"/>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name="" message="{http://invoices.globant.com/}getInvoiceServerID_v2Response">
+                                 <message style="2" use="1" soapVersion="2" encodingStyle="" docLitWrapped="true" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v2Response" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v2Response" prefix="tns"/>
+                                    </part>
+                                 </message>
+                              </output>
+                           </operation>
+                           <operation name="getInvoiceServerID_v3">
+                              <soap soapAction="" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://invoices.globant.com/}getInvoiceServerID_v3">
+                                 <message style="2" use="1" soapVersion="2" encodingStyle="" docLitWrapped="true" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v3" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v3" prefix="tns"/>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name="" message="{http://invoices.globant.com/}getInvoiceServerID_v3Response">
+                                 <message style="2" use="1" soapVersion="2" encodingStyle="" docLitWrapped="true" namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v3Response" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type namespace="http://invoices.globant.com/" localPart="getInvoiceServerID_v3Response" prefix="tns"/>
+                                    </part>
+                                 </message>
+                              </output>
+                           </operation>
+                        </port>
+                     </service>
+                  </model>
+               </wsconnection>
+            </Contents>
+         </XmlRefAddr>
       </RefAddresses>
    </Reference>
 </References>

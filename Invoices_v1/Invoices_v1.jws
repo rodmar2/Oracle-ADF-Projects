@@ -1,5 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <jws:workspace xmlns:jws="http://xmlns.oracle.com/ide/project">
+   <hash n="adrs-workspace-properties">
+      <value n="adrs-instance-binding" v="DefaultServer"/>
+   </hash>
    <value n="application-package-prefix" v="com.globant.invoices"/>
    <value n="appTemplateId" v="adfWebappApplicationTemplate"/>
    <hash n="component-versions">
@@ -14,6 +17,7 @@
       <value n="oracle.mds.internal.dt.ide.migrator.MDSConfigMigratorHelper" v="11.1.1.0.5313"/>
    </hash>
    <list n="listOfChildren">
+      <hash><url n="URL" path="JDEdwards_v1/JDEdwards_v1.jpr"/></hash>
       <hash><url n="URL" path="Model/Model.jpr"/></hash>
       <hash><url n="URL" path="ViewController/ViewController.jpr"/></hash>
    </list>

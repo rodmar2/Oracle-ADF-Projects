@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="RegisterInvoicePageDef"
+                Package="page">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.Integer" Name="getInvoiceServerID_Return"
+                IsQueriable="false" IsUpdateable="0"
+                DefaultValue="${bindings.getInvoiceServerID.result}"/>
+      <variable Type="java.lang.Integer" Name="getInvoiceServerID_arg0"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="getInvoiceServerID_v2_Return"
+                IsQueriable="false" IsUpdateable="0"
+                DefaultValue="${bindings.getInvoiceServerID_v2.result}"/>
+      <variable Type="java.lang.Integer" Name="getInvoiceServerID_v2_arg0"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="getInvoiceServerID_v2_arg1"
+                IsQueriable="false"/>
+      <variable Type="java.lang.Object" Name="getInvoiceServerID_v3_arg0"
+                IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="AInvoicesView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="AInvoicesView1Iterator"/>
+    <methodIterator Binds="getInvoiceServerID_v3.result"
+                    DataControl="InvoicesID_v3" RangeSize="25"
+                    BeanClass="com.globant.invoices.model.InvoicesID_v3.getInvoiceServerID_v3"
+                    id="getInvoiceServerID_v3Iterator"/>
+    <accessorIterator MasterBinding="getInvoiceServerID_v3Iterator"
+                      Binds="Return" RangeSize="25" DataControl="InvoicesID_v3"
+                      BeanClass="com.globant.invoices.model.InvoicesID_v3.getInvoiceServerID_v3.Return"
+                      id="ReturnIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="AInvoicesView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AInvoicesView1Iterator" id="RegistrationDate">
+      <AttrNames>
+        <Item Value="RegistrationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AInvoicesView1Iterator" id="Status">
+      <AttrNames>
+        <Item Value="Status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AInvoicesView1Iterator" id="IdEmployee">
+      <AttrNames>
+        <Item Value="IdEmployee"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="getInvoiceServerID" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="getInvoiceServerID"
+                  IsViewObjectMethod="false" DataControl="InvoicesID_v1"
+                  InstanceName="InvoicesID_v1"
+                  ReturnName="data.InvoicesID_v1.methodResults.getInvoiceServerID_InvoicesID_v1_getInvoiceServerID_result">
+      <NamedData NDName="arg0" NDType="java.lang.Integer"
+                 NDValue="${bindings.getInvoiceServerID_arg0}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="arg0">
+      <AttrNames>
+        <Item Value="getInvoiceServerID_arg0"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="Return">
+      <AttrNames>
+        <Item Value="getInvoiceServerID_Return"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="getInvoiceServerID_v2" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="getInvoiceServerID_v2"
+                  IsViewObjectMethod="false" DataControl="InvoicesID_v2"
+                  InstanceName="InvoicesID_v2"
+                  ReturnName="data.InvoicesID_v2.methodResults.getInvoiceServerID_v2_InvoicesID_v2_getInvoiceServerID_v2_result">
+      <NamedData NDName="arg0" NDType="java.lang.Integer"
+                 NDValue="${bindings.getInvoiceServerID_v2_arg0}"/>
+      <NamedData NDName="arg1" NDType="java.lang.String"
+                 NDValue="${bindings.getInvoiceServerID_v2_arg1}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="arg01">
+      <AttrNames>
+        <Item Value="getInvoiceServerID_v2_arg0"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="arg1">
+      <AttrNames>
+        <Item Value="getInvoiceServerID_v2_arg1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="Return1">
+      <AttrNames>
+        <Item Value="getInvoiceServerID_v2_Return"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReturnIterator" id="idJdedwards1">
+      <AttrNames>
+        <Item Value="idJdedwards"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="AInvoicesView1Iterator" id="AInvoicesView1">
+      <nodeDefinition DefName="com.globant.invoices.model.AInvoicesView"
+                      Name="AInvoicesView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="IdJdedwars"/>
+          <Item Value="RegistrationDate"/>
+          <Item Value="Status"/>
+          <Item Value="IdEmployee"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+    <action IterBinding="AInvoicesView1Iterator" id="Create"
+            RequiresUpdateModel="true" Action="createRow"/>
+    <methodAction id="getInvoiceServerID_v3" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="getInvoiceServerID_v3"
+                  IsViewObjectMethod="false" DataControl="InvoicesID_v3"
+                  InstanceName="InvoicesID_v3"
+                  ReturnName="data.InvoicesID_v3.methodResults.getInvoiceServerID_v3_InvoicesID_v3_getInvoiceServerID_v3_result">
+      <NamedData NDName="arg0"
+                 NDValue="#{bindings.AInvoicesView1Iterator.currentRow.dataProvider}"
+                 NDType="java.lang.Object" NDOption="2"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

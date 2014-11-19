@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="InvoicesID_v3" Package="com.globant.invoices.model"
+          BeanClass="com.globant.invoices.model.InvoicesID_v3"
+          isJavaBased="false">
+  <AccessorAttribute id="getInvoiceServerID_v3_parameters" IsCollection="false"
+                     BeanClass="InvoicesID_v3.Types.getInvoiceServerID_v3"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.String"
+                  id="getInvoiceServerID_v2" ReturnNodeName="Return">
+    <ParameterInfo id="arg0" Type="java.lang.Integer" isStructured="false"/>
+    <ParameterInfo id="arg1" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.globant.invoices.model.InvoicesID_v3.getInvoiceServerID_v3"
+                  BeanClass="com.globant.invoices.model.InvoicesID_v3.getInvoiceServerID_v3"
+                  id="getInvoiceServerID_v3" ReturnNodeName="Return">
+    <ParameterInfo id="arg0" Type="java.lang.Object" isStructured="false">
+      <Properties>
+        <Property Name="__SET_INITIAL_VALUE" Value="true"/>
+      </Properties>
+    </ParameterInfo>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Integer"
+                  id="getInvoiceServerID" ReturnNodeName="Return">
+    <ParameterInfo id="arg0" Type="java.lang.Integer" isStructured="false"/>
+  </MethodAccessor>
+</JavaBean>

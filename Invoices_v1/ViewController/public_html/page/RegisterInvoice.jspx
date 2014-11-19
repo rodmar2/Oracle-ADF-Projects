@@ -6,16 +6,228 @@
   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
   <f:view>
     <af:document id="d1">
+      <af:messages id="m1"/>
       <af:form id="f1">
         <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx"
                          id="pt1">
-          <f:facet name="center"/>
+          <f:facet name="center">
+            <af:group id="g3">
+              <af:panelGroupLayout id="pgl1">
+                <af:outputText value="Register Invoice" id="ot1"
+                               inlineStyle="font-size:medium; font-weight:bolder;"/>
+                <af:panelFormLayout id="pfl1">
+                  <af:inputText value="#{bindings.Id.inputValue}"
+                                label="#{bindings.Id.hints.label}"
+                                required="#{bindings.Id.hints.mandatory}"
+                                columns="#{bindings.Id.hints.displayWidth}"
+                                maximumLength="#{bindings.Id.hints.precision}"
+                                shortDesc="#{bindings.Id.hints.tooltip}"
+                                id="it4">
+                    <f:validator binding="#{bindings.Id.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.Id.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.idJdedwards1.inputValue}"
+                                label="ID JDEdwards : "                                                                
+                                id="it3" readOnly="true">
+                    <f:validator binding="#{bindings.idJdedwards1.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.Id.format}"/>
+                  </af:inputText>
+                  <af:inputDate value="#{bindings.RegistrationDate.inputValue}"
+                                label="#{bindings.RegistrationDate.hints.label}"
+                                required="#{bindings.RegistrationDate.hints.mandatory}"
+                                shortDesc="#{bindings.RegistrationDate.hints.tooltip}"
+                                id="id1">
+                    <f:validator binding="#{bindings.RegistrationDate.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.RegistrationDate.format}"/>
+                  </af:inputDate>
+                  <af:inputText value="#{bindings.Status.inputValue}"
+                                label="#{bindings.Status.hints.label}"
+                                required="#{bindings.Status.hints.mandatory}"
+                                columns="#{bindings.Status.hints.displayWidth}"
+                                maximumLength="#{bindings.Status.hints.precision}"
+                                shortDesc="#{bindings.Status.hints.tooltip}"
+                                id="it2">
+                    <f:validator binding="#{bindings.Status.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.Status.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.IdEmployee.inputValue}"
+                                label="#{bindings.IdEmployee.hints.label}"
+                                required="#{bindings.IdEmployee.hints.mandatory}"
+                                columns="#{bindings.IdEmployee.hints.displayWidth}"
+                                maximumLength="#{bindings.IdEmployee.hints.precision}"
+                                shortDesc="#{bindings.IdEmployee.hints.tooltip}"
+                                id="it1">
+                    <f:validator binding="#{bindings.IdEmployee.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.IdEmployee.format}"/>
+                  </af:inputText>
+                  <f:facet name="footer">
+                    <af:group id="g2">
+                      <af:panelGroupLayout id="pgl6">
+                        <af:commandButton actionListener="#{bindings.Create.execute}"
+                                          text="Create"
+                                          disabled="#{!bindings.Create.enabled}"
+                                          id="cb6"/>
+                        <af:commandButton actionListener="#{bindings.getInvoiceServerID_v3.execute}"
+                                          text="getInvoiceServerID_v3"
+                                          disabled="#{!bindings.getInvoiceServerID_v3.enabled}"
+                                          id="cb1"/>
+                        <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                          text="Commit"
+                                          disabled="#{!bindings.Commit.enabled}"
+                                          id="cb5"/>
+                      </af:panelGroupLayout>
+                    </af:group>
+                  </f:facet>
+                </af:panelFormLayout>
+              </af:panelGroupLayout>
+              <af:panelGroupLayout id="pgl5">
+                <af:outputText value="Invoices" id="ot4"
+                               inlineStyle="font-size:medium; font-weight:bolder;"/>
+                <af:table value="#{bindings.AInvoicesView1.collectionModel}"
+                          var="row" rows="#{bindings.AInvoicesView1.rangeSize}"
+                          emptyText="#{bindings.AInvoicesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.AInvoicesView1.rangeSize}"
+                          rowBandingInterval="0" id="t1"
+                          partialTriggers="::cb6 ::cb5">
+                  <af:column sortProperty="#{bindings.AInvoicesView1.hints.Id.name}"
+                             sortable="false"
+                             headerText="#{bindings.AInvoicesView1.hints.Id.label}"
+                             id="c5">
+                    <af:outputText value="#{row.Id}" id="ot5">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.AInvoicesView1.hints.Id.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.AInvoicesView1.hints.IdJdedwars.name}"
+                             sortable="false"
+                             headerText="#{bindings.AInvoicesView1.hints.IdJdedwars.label}"
+                             id="c3">
+                    <af:outputText value="#{row.IdJdedwars}" id="ot7">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.AInvoicesView1.hints.IdJdedwars.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.AInvoicesView1.hints.RegistrationDate.name}"
+                             sortable="false"
+                             headerText="#{bindings.AInvoicesView1.hints.RegistrationDate.label}"
+                             id="c4">
+                    <af:outputText value="#{row.RegistrationDate}" id="ot9">
+                      <af:convertDateTime pattern="#{bindings.AInvoicesView1.hints.RegistrationDate.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.AInvoicesView1.hints.Status.name}"
+                             sortable="false"
+                             headerText="#{bindings.AInvoicesView1.hints.Status.label}"
+                             id="c1">
+                    <af:outputText value="#{row.Status}" id="ot8">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.AInvoicesView1.hints.Status.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.AInvoicesView1.hints.IdEmployee.name}"
+                             sortable="false"
+                             headerText="#{bindings.AInvoicesView1.hints.IdEmployee.label}"
+                             id="c2">
+                    <af:outputText value="#{row.IdEmployee}" id="ot6">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.AInvoicesView1.hints.IdEmployee.format}"/>
+                    </af:outputText>
+                  </af:column>
+                </af:table>
+              </af:panelGroupLayout>
+            </af:group>
+          </f:facet>
           <f:facet name="header"/>
           <f:facet name="end"/>
-          <f:facet name="start"/>
+          <f:facet name="start">
+            <af:group id="g1">
+              <af:panelGroupLayout id="pgl2">
+                <af:outputText value="WS 1" id="ot2"
+                               inlineStyle="font-size:medium; font-weight:bolder;"/>
+                <af:panelFormLayout id="pfl2">
+                  <af:inputText value="#{bindings.arg0.inputValue}"
+                                label="Param 1 : "
+                                required="#{bindings.arg0.hints.mandatory}"
+                                columns="#{bindings.arg0.hints.displayWidth}"
+                                maximumLength="#{bindings.arg0.hints.precision}"
+                                shortDesc="#{bindings.arg0.hints.tooltip}"
+                                id="it5">
+                    <f:validator binding="#{bindings.arg0.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.arg0.format}"/>
+                  </af:inputText>
+                  <af:commandButton actionListener="#{bindings.getInvoiceServerID.execute}"
+                                    text="getInvoiceServerID"
+                                    disabled="#{!bindings.getInvoiceServerID.enabled}"
+                                    id="cb2"/>
+                </af:panelFormLayout>
+                <af:inputText value="#{bindings.Return.inputValue}"
+                              label="Result : "
+                              required="#{bindings.Return.hints.mandatory}"
+                              columns="#{bindings.Return.hints.displayWidth}"
+                              maximumLength="#{bindings.Return.hints.precision}"
+                              shortDesc="#{bindings.Return.hints.tooltip}"
+                              id="it6">
+                  <f:validator binding="#{bindings.Return.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.Return.format}"/>
+                </af:inputText>
+                <af:separator id="s1"/>
+              </af:panelGroupLayout>
+              <af:panelGroupLayout id="pgl3">
+                <af:outputText value="WS 2" id="outputText1"
+                               inlineStyle="font-size:medium; font-weight:bolder;"/>
+                <af:panelFormLayout id="pfl3">
+                  <af:inputText value="#{bindings.arg01.inputValue}"
+                                label="Param 1 : "
+                                required="#{bindings.arg01.hints.mandatory}"
+                                columns="#{bindings.arg01.hints.displayWidth}"
+                                maximumLength="#{bindings.arg01.hints.precision}"
+                                shortDesc="#{bindings.arg01.hints.tooltip}"
+                                id="it8">
+                    <f:validator binding="#{bindings.arg01.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.arg01.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.arg1.inputValue}"
+                                label="Param 2 : "
+                                required="#{bindings.arg1.hints.mandatory}"
+                                columns="#{bindings.arg1.hints.displayWidth}"
+                                maximumLength="#{bindings.arg1.hints.precision}"
+                                shortDesc="#{bindings.arg1.hints.tooltip}"
+                                id="it7">
+                    <f:validator binding="#{bindings.arg1.validator}"/>
+                  </af:inputText>
+                  <af:commandButton actionListener="#{bindings.getInvoiceServerID_v2.execute}"
+                                    text="getInvoiceServerID_v2"
+                                    disabled="#{!bindings.getInvoiceServerID_v2.enabled}"
+                                    id="cb3"/>
+                  <af:inputText value="#{bindings.Return1.inputValue}"
+                                label="Result : "
+                                required="#{bindings.Return1.hints.mandatory}"
+                                columns="#{bindings.Return1.hints.displayWidth}"
+                                maximumLength="#{bindings.Return1.hints.precision}"
+                                shortDesc="#{bindings.Return1.hints.tooltip}"
+                                id="it9">
+                    <f:validator binding="#{bindings.Return1.validator}"/>
+                  </af:inputText>
+                </af:panelFormLayout>
+                <af:separator id="s2"/>
+              </af:panelGroupLayout>
+              <af:panelGroupLayout id="pgl4">
+                <af:outputText value="WS 3" id="ot3"
+                               inlineStyle="font-size:medium; font-weight:bolder;"/>
+              </af:panelGroupLayout>
+            </af:group>
+          </f:facet>
           <f:facet name="branding"/>
           <f:facet name="copyright"/>
           <f:facet name="status"/>
+          <f:attribute name="startColumnSize" value="300"/>
         </af:pageTemplate>
       </af:form>
     </af:document>
