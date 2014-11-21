@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="windows-1252" ?>
-<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2"></adfc-config>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <managed-bean id="__2">
+    <managed-bean-name id="__1">PageBean_RegisterInvoice_v2</managed-bean-name>
+    <managed-bean-class id="__3">com.globant.invoices.view.backing.page.RegisterInvoice_v2</managed-bean-class>
+    <managed-bean-scope id="__4">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1page/RegisterInvoice_v2.jspx-->
+  </managed-bean>
+</adfc-config>

@@ -8,8 +8,6 @@ public class Invoice {
     private int idJdedwards;
     private Date date;
     private int status;
-    private int idEmployee;
-
 
     public Invoice() {
         super();
@@ -47,17 +45,9 @@ public class Invoice {
         this.status = status;
     }
 
-    public int getIdEmployee() {
-        return idEmployee;
-    }
-
-    public void setIdEmployee(int idEmployee) {
-        this.idEmployee = idEmployee;
-    }
-
     public String toString() {
         StringBuilder s = new StringBuilder();
-        s.append(String.format("Invoice[id: %d, idJdedwards: %d, date: %s, status: %d, idEmployee: %d]", id, idJdedwards, date, status, idEmployee));
+        s.append(String.format("Invoice[id: %d, idJdedwards: %d, date: %s, status: %d]", id, idJdedwards, date, status));
         
         return s.toString();
     }
