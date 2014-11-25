@@ -7,14 +7,149 @@
   <f:view>
     <af:document id="d1"
                  binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.d1}">
+      <af:messages binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.m1}"
+                   id="m1"/>
       <af:form id="f1"
                binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.f1}">
         <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx"
                          id="pt1">
-          <f:facet name="center"/>
+          <f:facet name="center">
+            <af:panelGroupLayout binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.pgl1}"
+                                 id="pgl1">
+              <af:outputText value="Invoice Test"
+                             binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.ot1}"
+                             id="ot1"
+                             inlineStyle="font-size:medium; font-weight:bolder;"/>
+              <af:panelFormLayout binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.pfl1}"
+                                  id="pfl1">
+                <af:inputText value="#{bindings.Id.inputValue}"
+                              label="#{bindings.Id.hints.label}"
+                              required="#{bindings.Id.hints.mandatory}"
+                              columns="#{bindings.Id.hints.displayWidth}"
+                              maximumLength="#{bindings.Id.hints.precision}"
+                              shortDesc="#{bindings.Id.hints.tooltip}"
+                              binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.it3}"
+                              id="it3" readOnly="true">
+                  <f:validator binding="#{bindings.Id.validator}"/>
+                </af:inputText>
+                <af:inputDate value="#{bindings.RegistrationDate.inputValue}"
+                              label="#{bindings.RegistrationDate.hints.label}"
+                              required="#{bindings.RegistrationDate.hints.mandatory}"
+                              shortDesc="#{bindings.RegistrationDate.hints.tooltip}"
+                              binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.id1}"
+                              id="id1">
+                  <f:validator binding="#{bindings.RegistrationDate.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.RegistrationDate.format}"/>
+                </af:inputDate>
+                <af:inputText value="#{bindings.Status.inputValue}"
+                              label="#{bindings.Status.hints.label}"
+                              required="#{bindings.Status.hints.mandatory}"
+                              columns="#{bindings.Status.hints.displayWidth}"
+                              maximumLength="#{bindings.Status.hints.precision}"
+                              shortDesc="#{bindings.Status.hints.tooltip}"
+                              binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.it2}"
+                              id="it2">
+                  <f:validator binding="#{bindings.Status.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.Status.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.IdEmployee.inputValue}"
+                              label="#{bindings.IdEmployee.hints.label}"
+                              required="#{bindings.IdEmployee.hints.mandatory}"
+                              columns="#{bindings.IdEmployee.hints.displayWidth}"
+                              maximumLength="#{bindings.IdEmployee.hints.precision}"
+                              shortDesc="#{bindings.IdEmployee.hints.tooltip}"
+                              binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.it1}"
+                              id="it1">
+                  <f:validator binding="#{bindings.IdEmployee.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.IdEmployee.format}"/>
+                </af:inputText>
+                <f:facet name="footer">
+                  <af:group binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.g1}"
+                            id="g1">
+                    <af:panelGroupLayout binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.pgl2}"
+                                         id="pgl2">
+                      <af:commandButton text="Say Hello !" id="cb1"
+                                        action="#{backingBeanScope.PageBean_RegisterInvoice_v2.sayHello}"/>
+                      <af:commandButton text="Create" id="cb2"
+                                        action="#{backingBeanScope.PageBean_RegisterInvoice_v2.createInvoice}"
+                                        />
+                      <af:commandButton text="Save" id="cb3"
+                                        action="#{backingBeanScope.PageBean_RegisterInvoice_v2.saveInvoice}"/>
+                      <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
+                                        text="CreateInsert"
+                                        disabled="#{!bindings.CreateInsert.enabled}"
+                                        binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.cb4}"
+                                        id="cb4" />
+                      <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                        text="Commit"
+                                        disabled="#{!bindings.Commit.enabled}"
+                                        binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.cb5}"
+                                        id="cb5"/>
+                    </af:panelGroupLayout>
+                  </af:group>
+                </f:facet>
+              </af:panelFormLayout>
+              <af:table value="#{bindings.AInvoicesView1.collectionModel}"
+                        var="row" rows="#{bindings.AInvoicesView1.rangeSize}"
+                        emptyText="#{bindings.AInvoicesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                        fetchSize="#{bindings.AInvoicesView1.rangeSize}"
+                        rowBandingInterval="0"
+                        selectedRowKeys="#{bindings.AInvoicesView1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.AInvoicesView1.collectionModel.makeCurrent}"
+                        rowSelection="single"
+                        binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.t1}"
+                        id="t1" partialTriggers="::cb4">
+                <af:column sortProperty="#{bindings.AInvoicesView1.hints.Id.name}"
+                           sortable="true"
+                           headerText="#{bindings.AInvoicesView1.hints.Id.label}"
+                           id="c4">
+                  <af:outputText value="#{row.Id}" id="ot2"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.AInvoicesView1.hints.IdJdedwars.name}"
+                           sortable="true"
+                           headerText="#{bindings.AInvoicesView1.hints.IdJdedwars.label}"
+                           id="c5">
+                  <af:outputText value="#{row.IdJdedwars}" id="ot3">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.AInvoicesView1.hints.IdJdedwars.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.AInvoicesView1.hints.RegistrationDate.name}"
+                           sortable="true"
+                           headerText="#{bindings.AInvoicesView1.hints.RegistrationDate.label}"
+                           id="c1">
+                  <af:outputText value="#{row.RegistrationDate}" id="ot5">
+                    <af:convertDateTime pattern="#{bindings.AInvoicesView1.hints.RegistrationDate.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.AInvoicesView1.hints.Status.name}"
+                           sortable="true"
+                           headerText="#{bindings.AInvoicesView1.hints.Status.label}"
+                           id="c3">
+                  <af:outputText value="#{row.Status}" id="ot4">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.AInvoicesView1.hints.Status.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.AInvoicesView1.hints.IdEmployee.name}"
+                           sortable="true"
+                           headerText="#{bindings.AInvoicesView1.hints.IdEmployee.label}"
+                           id="c2">
+                  <af:outputText value="#{row.IdEmployee}" id="ot6">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.AInvoicesView1.hints.IdEmployee.format}"/>
+                  </af:outputText>
+                </af:column>
+              </af:table>
+            </af:panelGroupLayout>
+          </f:facet>
           <f:facet name="header"/>
           <f:facet name="end"/>
-          <f:facet name="start"/>
+          <f:facet name="start">
+            
+          </f:facet>
           <f:facet name="branding"/>
           <f:facet name="copyright"/>
           <f:facet name="status"/>

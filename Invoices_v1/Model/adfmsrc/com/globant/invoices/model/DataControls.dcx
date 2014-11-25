@@ -94,15 +94,17 @@
       <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice"
                   name="InvoicesID_v4" version="1.0"
                   provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
-                  wsdl="http://localhost:7101/Invoices_v1-JDEdwards_v1-context-root/InvoicesServerSoap12HttpPort?wsdl">
+                  wsdl="http://localhost:7101/Invoices_v1-JDEdwards_v1-context-root/InvoicesServerSoap12HttpPort?WSDL">
         <service name="InvoicesServerService"
                  namespace="http://invoices.globant.com/"
                  connection="InvoicesID_v4">
           <port name="InvoicesServerSoap12HttpPort">
             <operation name="getInvoiceServerID_v2"/>
             <operation name="getInvoiceServerID_v3"/>
+            <operation name="getInvoiceServerID_v4"/>
             <operation name="getInvoiceServerID"/>
           </port>
+          <httpHeaders paramName="HttpHeader"/>
         </service>
       </definition>
     </Source>

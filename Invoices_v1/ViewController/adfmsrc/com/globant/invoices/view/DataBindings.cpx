@@ -5,10 +5,14 @@
   <pageMap>
     <page path="/page/RegisterInvoice.jspx"
           usageId="com_globant_invoices_view_RegisterInvoicePageDef"/>
+    <page path="/page/RegisterInvoice_v2.jspx"
+          usageId="com_globant_invoices_view_RegisterInvoice_v2PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_globant_invoices_view_RegisterInvoicePageDef"
           path="page.RegisterInvoicePageDef"/>
+    <page id="com_globant_invoices_view_RegisterInvoice_v2PageDef"
+          path="page.RegisterInvoice_v2PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="InvoicesID_v3" path="com.globant.invoices.model.InvoicesID_v3"/>

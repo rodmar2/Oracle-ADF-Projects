@@ -17,13 +17,16 @@
   </DesignTime>
   <Attribute
     Name="Id"
-    IsNotNull="true"
     ColumnName="ID"
     SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
     TableName="A_INVOICES"
-    PrimaryKey="true">
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
@@ -99,9 +102,6 @@
       <Attr Name="_checkCondition" Value='"ID" IS NOT NULL'/>
       <Attr Name="_isCheck" Value="true"/>
     </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="com.globant.invoices.model.AInvoices.Id"/>
-    </AttrArray>
   </Key>
   <Key
     Name="SysC0011558">

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="arg0" Package="InvoicesID_v4.Types.getInvoiceServerID_v4"
+          BeanClass="InvoicesID_v4.Types.getInvoiceServerID_v4.arg0"
+          isJavaBased="false">
+  <Attribute Name="date" IsNotNull="false" Type="java.sql.Date"/>
+  <Attribute Name="id" IsNotNull="true" Type="java.lang.Integer"/>
+  <Attribute Name="status" IsNotNull="true" Type="java.lang.Integer"/>
+</JavaBean>

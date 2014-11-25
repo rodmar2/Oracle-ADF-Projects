@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="RegisterInvoice_v2PageDef"
+                Package="page">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AInvoicesView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="AInvoicesView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="AInvoicesView1Iterator" id="RegistrationDate">
+      <AttrNames>
+        <Item Value="RegistrationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AInvoicesView1Iterator" id="Status">
+      <AttrNames>
+        <Item Value="Status"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="AInvoicesView1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"
+            InstanceName="AppModuleDataControl1.AInvoicesView1"
+            DataControl="AppModuleDataControl1"/>
+    <attributeValues IterBinding="AInvoicesView1Iterator" id="IdEmployee">
+      <AttrNames>
+        <Item Value="IdEmployee"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl1"/>
+    <attributeValues IterBinding="AInvoicesView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="AInvoicesView1Iterator" id="AInvoicesView1">
+      <nodeDefinition DefName="com.globant.invoices.model.AInvoicesView"
+                      Name="AInvoicesView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="IdJdedwars"/>
+          <Item Value="RegistrationDate"/>
+          <Item Value="Status"/>
+          <Item Value="IdEmployee"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
