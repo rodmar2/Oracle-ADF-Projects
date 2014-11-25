@@ -6,7 +6,8 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="AInvoicesView1" RangeSize="25"
-              DataControl="AppModuleDataControl" id="AInvoicesView1Iterator"/>
+              DataControl="AppModuleDataControl" id="AInvoicesView1Iterator"
+              ChangeEventPolicy="ppr"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="AInvoicesView1Iterator" id="RegistrationDate">
@@ -19,17 +20,11 @@
         <Item Value="Status"/>
       </AttrNames>
     </attributeValues>
-    <action IterBinding="AInvoicesView1Iterator" id="CreateInsert"
-            RequiresUpdateModel="true" Action="createInsertRow"
-            InstanceName="AppModuleDataControl1.AInvoicesView1"
-            DataControl="AppModuleDataControl1"/>
     <attributeValues IterBinding="AInvoicesView1Iterator" id="IdEmployee">
       <AttrNames>
         <Item Value="IdEmployee"/>
       </AttrNames>
     </attributeValues>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
-            DataControl="AppModuleDataControl1"/>
     <attributeValues IterBinding="AInvoicesView1Iterator" id="Id">
       <AttrNames>
         <Item Value="Id"/>
@@ -47,5 +42,17 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action id="Rollback" RequiresUpdateModel="false"
+            Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <action IterBinding="AInvoicesView1Iterator" id="Next"
+            RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="AInvoicesView1Iterator" id="Previous"
+            RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="AInvoicesView1Iterator" id="CreateInsert"
+            InstanceName="AppModuleDataControl1.AInvoicesView1"
+            DataControl="AppModuleDataControl1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Commit" DataControl="AppModuleDataControl1"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
   </bindings>
 </pageDefinition>

@@ -70,23 +70,37 @@
                             id="g1">
                     <af:panelGroupLayout binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.pgl2}"
                                          id="pgl2">
-                      <af:commandButton text="Say Hello !" id="cb1"
-                                        action="#{backingBeanScope.PageBean_RegisterInvoice_v2.sayHello}"/>
+                      <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                        text="Previous"
+                                        disabled="#{!bindings.Previous.enabled}"
+                                        partialSubmit="true"
+                                        binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.cb6}"
+                                        id="cb6"/>
+                      <af:commandButton actionListener="#{bindings.Next.execute}"
+                                        text="Next"
+                                        disabled="#{!bindings.Next.enabled}"
+                                        partialSubmit="true"
+                                        binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.cb5}"
+                                        id="cb5"/>
+                      <af:spacer width="10" height="10"
+                                 binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.s2}"
+                                 id="s2"/>
                       <af:commandButton text="Create" id="cb2"
                                         action="#{backingBeanScope.PageBean_RegisterInvoice_v2.createInvoice}"
                                         />
+                      <af:spacer width="10" height="10"
+                                 binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.s1}"
+                                 id="s1"/>
                       <af:commandButton text="Save" id="cb3"
                                         action="#{backingBeanScope.PageBean_RegisterInvoice_v2.saveInvoice}"/>
-                      <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
-                                        text="CreateInsert"
-                                        disabled="#{!bindings.CreateInsert.enabled}"
+                      <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                                        text="Cancel"
+                                        disabled="#{!bindings.Rollback.enabled}"
+                                        immediate="true"
                                         binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.cb4}"
-                                        id="cb4" />
-                      <af:commandButton actionListener="#{bindings.Commit.execute}"
-                                        text="Commit"
-                                        disabled="#{!bindings.Commit.enabled}"
-                                        binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.cb5}"
-                                        id="cb5"/>
+                                        id="cb4">
+                        <af:resetActionListener/>
+                      </af:commandButton>
                     </af:panelGroupLayout>
                   </af:group>
                 </f:facet>
@@ -100,7 +114,7 @@
                         selectionListener="#{bindings.AInvoicesView1.collectionModel.makeCurrent}"
                         rowSelection="single"
                         binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.t1}"
-                        id="t1" partialTriggers="::cb4">
+                        id="t1" partialTriggers="::cb4 ::cb5 ::cb6">
                 <af:column sortProperty="#{bindings.AInvoicesView1.hints.Id.name}"
                            sortable="true"
                            headerText="#{bindings.AInvoicesView1.hints.Id.label}"
@@ -148,7 +162,11 @@
           <f:facet name="header"/>
           <f:facet name="end"/>
           <f:facet name="start">
-            
+            <af:panelGroupLayout binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.pgl3}"
+                                 id="pgl3">
+              <af:commandButton text="Say Hello !" id="cb1"
+                                action="#{backingBeanScope.PageBean_RegisterInvoice_v2.sayHello}"/>
+            </af:panelGroupLayout>
           </f:facet>
           <f:facet name="branding"/>
           <f:facet name="copyright"/>

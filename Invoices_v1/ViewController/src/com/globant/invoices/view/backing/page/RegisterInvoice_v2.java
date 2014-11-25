@@ -15,6 +15,8 @@ import oracle.adf.view.rich.component.rich.nav.RichCommandButton;
 import oracle.adf.view.rich.component.rich.output.RichMessages;
 import oracle.adf.view.rich.component.rich.output.RichOutputText;
 
+import oracle.adf.view.rich.component.rich.output.RichSpacer;
+
 import org.apache.myfaces.trinidad.component.UIXGroup;
 
 public class RegisterInvoice_v2 {
@@ -30,15 +32,18 @@ public class RegisterInvoice_v2 {
     private UIXGroup g1;
     private RichCommandButton cb2;
     private RichPanelGroupLayout pgl2;
-    private RichCommandButton cb4;
     private RichInputText it1;
-    private RichCommandButton cb5;
     private RichPanelFormLayout pfl2;
     private RichInputDate id2;
     private RichInputText it3;
     private RichInputText it4;
     private RichCommandButton cb6;
     private RichTable t1;
+    private RichPanelGroupLayout pgl3;
+    private RichCommandButton cb4;
+    private RichSpacer s1;
+    private RichCommandButton cb5;
+    private RichSpacer s2;
 
     public void setF1(RichForm f1) {
         this.f1 = f1;
@@ -133,8 +138,16 @@ public class RegisterInvoice_v2 {
         OperationBinding operation = bindings.getOperationBinding("CreateInsert");
         System.out.println(String.format("operation: %s", operation));
         
-        Object o = operation.execute();
-        System.out.println(String.format("execution: %s", o));
+        Object o = null;
+        try {
+            o = operation.execute();
+        }
+        catch (Exception e) {
+            System.out.println(String.format("Exception: %s", e.getMessage()));
+        }
+        finally {
+            System.out.println(String.format("execution: %s", o));
+        }
     }
     
     /**
@@ -149,8 +162,16 @@ public class RegisterInvoice_v2 {
         OperationBinding operation = bindings.getOperationBinding("Commit");
         System.out.println(String.format("operation: %s", operation));
         
-        Object o = operation.execute();
-        System.out.println(String.format("execution: %s", o));
+        Object o = null;
+        try {
+            o = operation.execute();
+        }
+        catch (Exception e) {
+            System.out.println(String.format("Exception: %s", e.getMessage()));
+        }
+        finally {
+            System.out.println(String.format("execution: %s", o));
+        }
     }
 
     public void setG1(UIXGroup g1) {
@@ -178,29 +199,12 @@ public class RegisterInvoice_v2 {
     }
 
 
-    public void setCb4(RichCommandButton cb4) {
-        this.cb4 = cb4;
-    }
-
-    public RichCommandButton getCb4() {
-        return cb4;
-    }
-
     public void setIt1(RichInputText it1) {
         this.it1 = it1;
     }
 
     public RichInputText getIt1() {
         return it1;
-    }
-
-
-    public void setCb5(RichCommandButton cb5) {
-        this.cb5 = cb5;
-    }
-
-    public RichCommandButton getCb5() {
-        return cb5;
     }
 
 
@@ -251,5 +255,46 @@ public class RegisterInvoice_v2 {
 
     public RichTable getT1() {
         return t1;
+    }
+
+    public void setPgl3(RichPanelGroupLayout pgl3) {
+        this.pgl3 = pgl3;
+    }
+
+    public RichPanelGroupLayout getPgl3() {
+        return pgl3;
+    }
+
+    public void setCb4(RichCommandButton cb4) {
+        this.cb4 = cb4;
+    }
+
+    public RichCommandButton getCb4() {
+        return cb4;
+    }
+
+    public void setS1(RichSpacer s1) {
+        this.s1 = s1;
+    }
+
+    public RichSpacer getS1() {
+        return s1;
+    }
+
+
+    public void setCb5(RichCommandButton cb5) {
+        this.cb5 = cb5;
+    }
+
+    public RichCommandButton getCb5() {
+        return cb5;
+    }
+
+    public void setS2(RichSpacer s2) {
+        this.s2 = s2;
+    }
+
+    public RichSpacer getS2() {
+        return s2;
     }
 }
