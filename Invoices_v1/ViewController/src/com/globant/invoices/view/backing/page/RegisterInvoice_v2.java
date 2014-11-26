@@ -1,5 +1,20 @@
 package com.globant.invoices.view.backing.page;
 
+import com.globant.invoices.webservices.proxy.GetInvoiceServerIDV4Response;
+import com.globant.invoices.webservices.proxy.InvoiceRequest;
+import com.globant.invoices.webservices.proxy.InvoiceResult;
+import com.globant.invoices.webservices.proxy.InvoicesServer;
+import com.globant.invoices.webservices.proxy.InvoicesServerService;
+
+import java.util.Date;
+
+import java.util.GregorianCalendar;
+
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+
+import javax.xml.ws.Response;
+
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
 import oracle.binding.OperationBinding;
@@ -20,22 +35,25 @@ import oracle.adf.view.rich.component.rich.output.RichSpacer;
 import org.apache.myfaces.trinidad.component.UIXGroup;
 
 public class RegisterInvoice_v2 {
+    
+    /* Used in code */
+    private RichInputText invoiceID;
+    private RichInputDate invoiceDate;
+    private RichInputText invoiceStatus;
+        
     private RichForm f1;
     private RichDocument d1;
     private RichPanelGroupLayout pgl1;
     private RichOutputText ot1;
     private RichMessages m1;
-    private RichPanelFormLayout pfl1;
-    private RichInputDate id1;
-    private RichInputText it2;
+    private RichPanelFormLayout pfl1;    
     private RichCommandButton cb1;
     private UIXGroup g1;
     private RichCommandButton cb2;
     private RichPanelGroupLayout pgl2;
     private RichInputText it1;
     private RichPanelFormLayout pfl2;
-    private RichInputDate id2;
-    private RichInputText it3;
+    private RichInputDate id2;    
     private RichInputText it4;
     private RichCommandButton cb6;
     private RichTable t1;
@@ -94,20 +112,20 @@ public class RegisterInvoice_v2 {
     }
 
 
-    public void setId1(RichInputDate id1) {
-        this.id1 = id1;
+    public void setInvoiceDate(RichInputDate id1) {
+        this.invoiceDate = id1;
     }
 
-    public RichInputDate getId1() {
-        return id1;
+    public RichInputDate getInvoiceDate() {
+        return invoiceDate;
     }
 
-    public void setIt2(RichInputText it2) {
-        this.it2 = it2;
+    public void setInvoiceStatus(RichInputText it2) {
+        this.invoiceStatus = it2;
     }
 
-    public RichInputText getIt2() {
-        return it2;
+    public RichInputText getInvoiceStatus() {
+        return invoiceStatus;
     }
 
 
@@ -165,6 +183,25 @@ public class RegisterInvoice_v2 {
         Object o = null;
         try {
             o = operation.execute();
+            
+            InvoicesServerService invoicesServerService = new InvoicesServerService();
+            InvoicesServer invoicesServer = invoicesServerService.getInvoicesServerSoap12HttpPort();
+                    
+            InvoiceRequest invoiceRequest = new InvoiceRequest();          
+            Response<GetInvoiceServerIDV4Response> invoiceCaller;
+            
+            GregorianCalendar c = new GregorianCalendar();
+            c.setTime(new Date());
+            XMLGregorianCalendar date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
+            
+            invoiceRequest.setId(1);                
+            invoiceRequest.setDate(date2);
+            invoiceRequest.setStatus(10);
+            invoiceCaller = invoicesServer.getInvoiceServerIDV4Async(invoiceRequest);            
+            GetInvoiceServerIDV4Response invoiceResultWrapper = invoiceCaller.get();
+            InvoiceResult invoiceResult = invoiceResultWrapper.getReturn();
+                        
+            System.out.println(String.format("WS Call: %s, Result: %d, %d", invoiceCaller, invoiceResult.getId(), invoiceResult.getIdJdedwards()));
         }
         catch (Exception e) {
             System.out.println(String.format("Exception: %s", e.getMessage()));
@@ -224,12 +261,12 @@ public class RegisterInvoice_v2 {
         return id2;
     }
 
-    public void setIt3(RichInputText it3) {
-        this.it3 = it3;
+    public void setInvoiceID(RichInputText it3) {
+        this.invoiceID = it3;
     }
 
-    public RichInputText getIt3() {
-        return it3;
+    public RichInputText getInvoiceID() {
+        return invoiceID;
     }
 
     public void setIt4(RichInputText it4) {

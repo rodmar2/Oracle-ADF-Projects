@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle-webservice-clients xmlns:ns2="http://java.sun.com/xml/ns/javaee">
+   <webservice-client>
+      <service-qname localpart="InvoicesServerService"
+                     namespaceURI="http://invoices.globant.com/"/>
+      <port-info>
+         <wsdl-port localpart="InvoicesServerSoap12HttpPort"
+                    namespaceURI="http://invoices.globant.com/"/>
+         <runtime/>
+         <operations>
+            <operation name="getInvoiceServerID"/>
+            <operation name="getInvoiceServerIDV2"/>
+            <operation name="getInvoiceServerIDV3"/>
+            <operation name="getInvoiceServerIDV4"/>
+         </operations>
+      </port-info>
+   </webservice-client>
+</oracle-webservice-clients>

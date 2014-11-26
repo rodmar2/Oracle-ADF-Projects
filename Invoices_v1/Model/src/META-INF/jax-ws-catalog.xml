@@ -1,0 +1,4 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <system systemId="http://localhost:7101/Invoices_v1-JDEdwards_v1-context-root/InvoicesServerSoap12HttpPort?WSDL"
+          uri="../com/globant/invoices/webservices/proxy/InvoicesServerService.wsdl"/>
+</catalog>

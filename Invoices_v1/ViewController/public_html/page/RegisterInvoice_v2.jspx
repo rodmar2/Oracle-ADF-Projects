@@ -28,16 +28,16 @@
                               columns="#{bindings.Id.hints.displayWidth}"
                               maximumLength="#{bindings.Id.hints.precision}"
                               shortDesc="#{bindings.Id.hints.tooltip}"
-                              binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.it3}"
-                              id="it3" readOnly="true">
+                              binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.invoiceID}"
+                              id="invoiceID" readOnly="true">
                   <f:validator binding="#{bindings.Id.validator}"/>
                 </af:inputText>
                 <af:inputDate value="#{bindings.RegistrationDate.inputValue}"
                               label="#{bindings.RegistrationDate.hints.label}"
                               required="#{bindings.RegistrationDate.hints.mandatory}"
                               shortDesc="#{bindings.RegistrationDate.hints.tooltip}"
-                              binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.id1}"
-                              id="id1">
+                              binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.invoiceDate}"
+                              id="invoiceDate">
                   <f:validator binding="#{bindings.RegistrationDate.validator}"/>
                   <af:convertDateTime pattern="#{bindings.RegistrationDate.format}"/>
                 </af:inputDate>
@@ -47,8 +47,8 @@
                               columns="#{bindings.Status.hints.displayWidth}"
                               maximumLength="#{bindings.Status.hints.precision}"
                               shortDesc="#{bindings.Status.hints.tooltip}"
-                              binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.it2}"
-                              id="it2">
+                              binding="#{backingBeanScope.PageBean_RegisterInvoice_v2.invoiceStatus}"
+                              id="invoiceStatus">
                   <f:validator binding="#{bindings.Status.validator}"/>
                   <af:convertNumber groupingUsed="false"
                                     pattern="#{bindings.Status.format}"/>

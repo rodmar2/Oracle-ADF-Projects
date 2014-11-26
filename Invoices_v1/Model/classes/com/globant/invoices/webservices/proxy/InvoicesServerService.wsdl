@@ -1,0 +1,100 @@
+<definitions
+     name="InvoicesServerService"
+     targetNamespace="http://invoices.globant.com/"
+     xmlns="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="http://invoices.globant.com/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    >
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://invoices.globant.com/" schemaLocation="InvoicesServerSoap12HttpPort_xsd_1.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="getInvoiceServerID">
+        <part name="parameters" element="tns:getInvoiceServerID"/>
+    </message>
+    <message name="getInvoiceServerIDResponse">
+        <part name="parameters" element="tns:getInvoiceServerIDResponse"/>
+    </message>
+    <message name="getInvoiceServerID_v2">
+        <part name="parameters" element="tns:getInvoiceServerID_v2"/>
+    </message>
+    <message name="getInvoiceServerID_v2Response">
+        <part name="parameters" element="tns:getInvoiceServerID_v2Response"/>
+    </message>
+    <message name="getInvoiceServerID_v3">
+        <part name="parameters" element="tns:getInvoiceServerID_v3"/>
+    </message>
+    <message name="getInvoiceServerID_v3Response">
+        <part name="parameters" element="tns:getInvoiceServerID_v3Response"/>
+    </message>
+    <message name="getInvoiceServerID_v4">
+        <part name="parameters" element="tns:getInvoiceServerID_v4"/>
+    </message>
+    <message name="getInvoiceServerID_v4Response">
+        <part name="parameters" element="tns:getInvoiceServerID_v4Response"/>
+    </message>
+    <portType name="InvoicesServer">
+        <operation name="getInvoiceServerID">
+            <input message="tns:getInvoiceServerID"/>
+            <output message="tns:getInvoiceServerIDResponse"/>
+        </operation>
+        <operation name="getInvoiceServerID_v2">
+            <input message="tns:getInvoiceServerID_v2"/>
+            <output message="tns:getInvoiceServerID_v2Response"/>
+        </operation>
+        <operation name="getInvoiceServerID_v3">
+            <input message="tns:getInvoiceServerID_v3"/>
+            <output message="tns:getInvoiceServerID_v3Response"/>
+        </operation>
+        <operation name="getInvoiceServerID_v4">
+            <input message="tns:getInvoiceServerID_v4"/>
+            <output message="tns:getInvoiceServerID_v4Response"/>
+        </operation>
+    </portType>
+    <binding name="InvoicesServerSoap12HttpPortBinding" type="tns:InvoicesServer">
+        <soap12:binding style="document" transport="http://www.w3.org/2003/05/soap/bindings/HTTP/"/>
+        <operation name="getInvoiceServerID">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <input>
+                <soap12:body use="literal"/>
+            </input>
+            <output>
+                <soap12:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getInvoiceServerID_v2">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <input>
+                <soap12:body use="literal"/>
+            </input>
+            <output>
+                <soap12:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getInvoiceServerID_v3">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <input>
+                <soap12:body use="literal"/>
+            </input>
+            <output>
+                <soap12:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getInvoiceServerID_v4">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <input>
+                <soap12:body use="literal"/>
+            </input>
+            <output>
+                <soap12:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="InvoicesServerService">
+        <port name="InvoicesServerSoap12HttpPort" binding="tns:InvoicesServerSoap12HttpPortBinding">
+            <soap12:address location="http://localhost:7101/Invoices_v1-JDEdwards_v1-context-root/InvoicesServerSoap12HttpPort"/>
+        </port>
+    </service>
+</definitions>
