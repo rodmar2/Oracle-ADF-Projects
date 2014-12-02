@@ -1,5 +1,7 @@
 package com.globant.invoices.view.backing.page;
 
+import com.globant.invoices.app.AppModuleImpl;
+import com.globant.invoices.model.AInvoicesImpl;
 import com.globant.invoices.webservices.proxy.GetInvoiceServerIDV4Response;
 import com.globant.invoices.webservices.proxy.InvoiceRequest;
 import com.globant.invoices.webservices.proxy.InvoiceResult;
@@ -31,6 +33,15 @@ import oracle.adf.view.rich.component.rich.output.RichMessages;
 import oracle.adf.view.rich.component.rich.output.RichOutputText;
 
 import oracle.adf.view.rich.component.rich.output.RichSpacer;
+
+import oracle.jbo.ApplicationModule;
+import oracle.jbo.Key;
+import oracle.jbo.client.Configuration;
+import oracle.jbo.domain.DBSequence;
+import oracle.jbo.server.EntityDefImpl;
+
+import oracle.jbo.server.EntityImpl;
+import oracle.jbo.server.SequenceImpl;
 
 import org.apache.myfaces.trinidad.component.UIXGroup;
 
@@ -182,8 +193,16 @@ public class RegisterInvoice_v2 {
         
         Object o = null;
         try {
-            o = operation.execute();
-            
+            o = operation.execute();                                   
+        }
+        catch (Exception e) {
+            System.out.println(String.format("first Exception: %s", e.getMessage()));
+        }
+        finally {
+            System.out.println(String.format("first execution: %s", o));
+        }
+        try { 
+            // Calling WS
             InvoicesServerService invoicesServerService = new InvoicesServerService();
             InvoicesServer invoicesServer = invoicesServerService.getInvoicesServerSoap12HttpPort();
                     
@@ -193,21 +212,47 @@ public class RegisterInvoice_v2 {
             GregorianCalendar c = new GregorianCalendar();
             c.setTime(new Date());
             XMLGregorianCalendar date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
+                        
+            int id2 = Integer.parseInt(invoiceID.getValue().toString());
+            String s2 = invoiceDate.getValue().toString();
+            int status2 = Integer.parseInt(invoiceStatus.getValue().toString());
             
-            invoiceRequest.setId(1);                
+            invoiceRequest.setId(id2);                
             invoiceRequest.setDate(date2);
-            invoiceRequest.setStatus(10);
+            invoiceRequest.setStatus(status2);
+            
+            // WS invocation...
             invoiceCaller = invoicesServer.getInvoiceServerIDV4Async(invoiceRequest);            
             GetInvoiceServerIDV4Response invoiceResultWrapper = invoiceCaller.get();
             InvoiceResult invoiceResult = invoiceResultWrapper.getReturn();
                         
-            System.out.println(String.format("WS Call: %s, Result: %d, %d", invoiceCaller, invoiceResult.getId(), invoiceResult.getIdJdedwards()));
+            System.out.println(String.format("WS Request: %s, %s, %s. Result: %d, %d.", invoiceRequest, s2, status2, invoiceResult.getId(), invoiceResult.getIdJdedwards()));                
+                        
+            // Calling java client service from Application to set the idJdedwards:
+            String amDef = "com.globant.invoices.app.Model";   
+            String config = "AppModuleLocal";
+            /*
+            * This is the correct way to use application custom methods
+            * from the client, by using the application module's automatically-
+            * maintained custom service interface.
+            */
+            // 1. Acquire instance of application module, cast to client interface        
+            ApplicationModule am = Configuration.createRootApplicationModule(amDef,config);
+            AppModuleImpl appModuleImpl = (AppModuleImpl) am;        
+            
+            
+            // Adding it to DB.
+            //AInvoicesImpl ainvoiceImpl = appModuleImpl.findaInvoicesImplById(invoiceRequest.getId());
+            
+            AInvoicesImpl ainvoiceImpl = appModuleImpl.updateInvoicesImplById(invoiceRequest.getId(), invoiceResult.getIdJdedwards());                        
+            
+            System.out.println(String.format("Ending saveInvoice: %s.", ainvoiceImpl));
         }
         catch (Exception e) {
-            System.out.println(String.format("Exception: %s", e.getMessage()));
+            System.out.println(String.format("second Exception: %s", e.getMessage()));
         }
         finally {
-            System.out.println(String.format("execution: %s", o));
+            System.out.println(String.format("second execution: %s", o));
         }
     }
 
@@ -334,4 +379,6 @@ public class RegisterInvoice_v2 {
     public RichSpacer getS2() {
         return s2;
     }
+
+
 }

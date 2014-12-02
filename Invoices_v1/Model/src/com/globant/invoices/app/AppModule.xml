@@ -6,9 +6,15 @@
   Name="AppModule"
   Version="11.1.1.64.93"
   InheritPersonalization="true"
-  ClearCacheOnRollback="true">
+  ClearCacheOnRollback="true"
+  ComponentClass="com.globant.invoices.app.AppModuleImpl"
+  DefClass="com.globant.invoices.app.AppModuleDefImpl"
+  ComponentInterface="com.globant.invoices.app.common.AppModule"
+  ClientProxyName="com.globant.invoices.app.client.AppModuleClient">
   <DesignTime>
     <Attr Name="_deployType" Value="0"/>
+    <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_isDefCodegen" Value="true"/>
   </DesignTime>
   <ViewUsage
     Name="AInvoicesView1"
@@ -25,4 +31,25 @@
     SrcViewUsageName="com.globant.invoices.app.AppModule.EmployeesView1"
     DstViewUsageName="com.globant.invoices.app.AppModule.AInvoicesView2"
     Reversed="false"/>
+  <ClientInterface>
+    <Method
+      Name="findaInvoicesImplById">
+      <Return
+        Type="com.globant.invoices.model.AInvoicesImpl"/>
+      <Parameter
+        Name="aInvoicesImplId"
+        Type="int"/>
+    </Method>
+    <Method
+      Name="updateInvoicesImplById">
+      <Return
+        Type="com.globant.invoices.model.AInvoicesImpl"/>
+      <Parameter
+        Name="aInvoicesImplId"
+        Type="int"/>
+      <Parameter
+        Name="aInvoicesImplIdJdedwars"
+        Type="int"/>
+    </Method>
+  </ClientInterface>
 </AppModule>
